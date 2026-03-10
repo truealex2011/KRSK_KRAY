@@ -1,0 +1,319 @@
+/**
+ * History Tab Responsive Styles
+ * Mobile-first approach with breakpoints for tablet and desktop
+ */
+
+/* ============================================
+   BASE STYLES (Mobile First - < 768px)
+   ============================================ */
+
+.history-container {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--history-spacing-md);
+  margin: 0 auto;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--history-spacing-md);
+}
+
+.history-section {
+  margin-bottom: var(--history-spacing-xl);
+}
+
+.history-section-title {
+  font-size: var(--history-text-xl);
+  margin-bottom: var(--history-spacing-lg);
+}
+
+/* ============================================
+   TABLET STYLES (768px - 1023px)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .history-container {
+    max-width: 720px;
+    padding: var(--history-spacing-lg);
+  }
+  
+  .history-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--history-spacing-lg);
+  }
+  
+  .history-grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .history-section {
+    margin-bottom: var(--history-spacing-2xl);
+  }
+  
+  .history-section-title {
+    font-size: var(--history-text-2xl);
+    margin-bottom: var(--history-spacing-xl);
+  }
+}
+
+/* ============================================
+   DESKTOP STYLES (>= 1024px)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .history-container {
+    max-width: 960px;
+    padding: var(--history-spacing-xl);
+  }
+  
+  .history-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--history-spacing-xl);
+  }
+  
+  .history-grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .history-grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .history-grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .history-section {
+    margin-bottom: var(--history-spacing-3xl);
+  }
+  
+  .history-section-title {
+    font-size: var(--history-text-3xl);
+    margin-bottom: var(--history-spacing-2xl);
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP STYLES (>= 1280px)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .history-container {
+    max-width: 1200px;
+  }
+  
+  .history-grid {
+    gap: var(--history-spacing-2xl);
+  }
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC RESPONSIVE STYLES
+   ============================================ */
+
+/* Map Component */
+@media (max-width: 767px) {
+  .history-map-container {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .history-map-container {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-map-container {
+    height: 500px;
+  }
+}
+
+/* Quiz Component */
+@media (max-width: 767px) {
+  .history-quiz-options {
+    flex-direction: column;
+  }
+  
+  .history-quiz-option {
+    width: 100%;
+  }
+}
+
+/* Comparison Gallery */
+@media (max-width: 767px) {
+  .history-comparison-item {
+    height: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .history-comparison-item {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-comparison-item {
+    height: 450px;
+  }
+}
+
+/* Timeline Component */
+@media (max-width: 767px) {
+  .history-timeline {
+    padding-left: var(--history-spacing-lg);
+  }
+  
+  .history-timeline-item {
+    padding-left: var(--history-spacing-xl);
+  }
+  
+  /* Stack all items on one side on mobile */
+  .history-timeline-item--left,
+  .history-timeline-item--right {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .history-timeline {
+    padding-left: 0;
+  }
+  
+  .history-timeline-item--left {
+    text-align: right;
+    padding-right: var(--history-spacing-2xl);
+  }
+  
+  .history-timeline-item--right {
+    text-align: left;
+    padding-left: var(--history-spacing-2xl);
+  }
+}
+
+/* Hero Cards */
+@media (max-width: 767px) {
+  .history-hero-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .history-hero-card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .history-hero-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-hero-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Facts Counter */
+@media (max-width: 767px) {
+  .history-facts-counter {
+    grid-template-columns: 1fr;
+  }
+  
+  .history-fact-item {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .history-facts-counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-facts-counter {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Museum Carousel */
+@media (max-width: 767px) {
+  .history-carousel-item {
+    height: 250px;
+  }
+  
+  .history-carousel-nav {
+    bottom: var(--history-spacing-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .history-carousel-item {
+    height: 400px;
+  }
+  
+  .history-carousel-nav {
+    bottom: var(--history-spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-carousel-item {
+    height: 500px;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .history-button,
+  .history-link,
+  .history-interactive {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .history-hover-effect:hover {
+    transform: none;
+  }
+  
+  /* Use tap instead of hover for flip cards */
+  .history-hero-card {
+    cursor: pointer;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .history-container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .history-interactive,
+  .history-button,
+  .history-carousel-nav {
+    display: none;
+  }
+  
+  .history-section {
+    page-break-inside: avoid;
+  }
+  
+  .history-paper-texture {
+    background: white;
+  }
+}

@@ -1,0 +1,345 @@
+/**
+ * History Accordion Styles
+ * Скрывающиеся секции в виде сетки
+ */
+
+.history-accordion {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.history-accordion__item {
+  border: 3px solid var(--history-brown, #1B4332);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(27, 67, 50, 0.1);
+}
+
+.history-accordion__item:hover {
+  box-shadow: 0 8px 20px rgba(27, 67, 50, 0.25);
+  transform: translateY(-3px);
+}
+
+.history-accordion__header {
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Georgia, serif;
+}
+
+.history-accordion__header:hover {
+  background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+}
+
+.history-accordion__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.history-accordion__title {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1B4332;
+}
+
+.history-accordion__arrow {
+  font-size: 1.2rem;
+  color: #1B4332;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.history-accordion__item.active .history-accordion__arrow {
+  transform: rotate(180deg);
+}
+
+.history-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 1.5rem;
+  background: white;
+  color: #1B4332;
+}
+
+.history-accordion__item.active .history-accordion__content {
+  max-height: 5000px;
+  padding: 2rem 1.5rem;
+}
+
+/* ТЕМНО-ЗЕЛЕНЫЕ АККОРДЕОНЫ (шахматный порядок) */
+.history-accordion__item--dark {
+  background: #1B4332 !important;
+  border-color: #1B4332 !important;
+}
+
+.history-accordion__item--dark .history-accordion__header {
+  background: #1B4332 !important;
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__header:hover {
+  background: #0F2419 !important;
+}
+
+.history-accordion__item--dark .history-accordion__header .history-accordion__title {
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__header .history-accordion__arrow {
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__icon {
+  filter: brightness(1.5);
+}
+
+.history-accordion__item--dark .history-accordion__content {
+  background: #1B4332 !important;
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__content * {
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__content p {
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__content div {
+  color: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__content button {
+  color: #1B4332 !important;
+  background: #B8E6D5 !important;
+}
+
+.history-accordion__item--dark .history-accordion__content button:hover {
+  background: #A5D6A7 !important;
+}
+
+/* ДОПОЛНИТЕЛЬНАЯ СПЕЦИФИЧНОСТЬ ДЛЯ ТЕМНЫХ ЭЛЕМЕНТОВ */
+div.history-accordion__item.history-accordion__item--dark button.history-accordion__header span.history-accordion__title,
+.history-accordion .history-accordion__item--dark .history-accordion__header .history-accordion__title {
+  color: #B8E6D5 !important;
+  -webkit-text-fill-color: #B8E6D5 !important;
+}
+
+div.history-accordion__item.history-accordion__item--dark button.history-accordion__header span.history-accordion__arrow,
+.history-accordion .history-accordion__item--dark .history-accordion__header .history-accordion__arrow {
+  color: #B8E6D5 !important;
+  -webkit-text-fill-color: #B8E6D5 !important;
+}
+
+/* ГРАДИЕНТНЫЕ АККОРДЕОНЫ (карта и музейные артефакты) */
+.history-accordion__item--gradient {
+  background: linear-gradient(90deg, white 0%, white 50%, #1B4332 50%, #1B4332 100%) !important;
+  border-color: #1B4332 !important;
+}
+
+.history-accordion__item--gradient .history-accordion__header {
+  background: linear-gradient(90deg, #E8F5E9 0%, #C8E6C9 50%, #1B4332 50%, #1B4332 100%) !important;
+}
+
+.history-accordion__item--gradient .history-accordion__header:hover {
+  background: linear-gradient(90deg, #C8E6C9 0%, #A5D6A7 50%, #0F2419 50%, #0F2419 100%) !important;
+}
+
+.history-accordion__item--gradient .history-accordion__title {
+  color: #1B4332 !important;
+  text-shadow: none !important;
+}
+
+.history-accordion__item--gradient .history-accordion__arrow {
+  color: #1B4332 !important;
+  text-shadow: none !important;
+}
+
+.history-accordion__item--gradient .history-accordion__icon {
+  filter: none;
+}
+
+.history-accordion__item--gradient .history-accordion__content {
+  background: linear-gradient(90deg, white 0%, white 50%, #1B4332 50%, #1B4332 100%) !important;
+  color: #1B4332 !important;
+}
+
+.history-accordion__item--gradient .history-accordion__content p {
+  color: #1B4332 !important;
+}
+
+/* Полноширинные элементы (карта и карусель) */
+.history-accordion__item:nth-child(1),
+.history-accordion__item:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+/* TIMELINE И HEROES РЯДОМ С ОДИНАКОВОЙ ВЫСОТОЙ */
+.history-accordion__item:nth-child(3),
+.history-accordion__item:nth-child(4) {
+  grid-column: auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.history-accordion__item:nth-child(3) .history-accordion__content,
+.history-accordion__item:nth-child(4) .history-accordion__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+#history-section-timeline,
+#history-section-heroes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+#history-timeline,
+#history-heroes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.timeline {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 2000px !important;
+  height: 100% !important;
+  flex: 1;
+}
+
+.hero-cards-grid {
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  grid-template-columns: 1fr !important;
+}
+
+.hero-card {
+  height: 380px !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .history-accordion {
+    grid-template-columns: 1fr;
+  }
+
+  .history-accordion__item:nth-child(1),
+  .history-accordion__item:nth-child(2) {
+    grid-column: 1;
+  }
+  }
+}
+
+@media (max-width: 768px) {
+  .history-accordion__header {
+    padding: 1rem;
+  }
+
+  .history-accordion__icon {
+    font-size: 1.5rem;
+  }
+
+  .history-accordion__title {
+    font-size: 1rem;
+  }
+
+  .history-accordion__content {
+    padding: 0 1rem;
+  }
+
+  .history-accordion__item.active .history-accordion__content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+
+/* ДОПОЛНИТЕЛЬНАЯ СПЕЦИФИЧНОСТЬ ДЛЯ ГРАДИЕНТНЫХ ЭЛЕМЕНТОВ */
+.history-accordion .history-accordion__item--gradient .history-accordion__header .history-accordion__title,
+.history-accordion__item.history-accordion__item--gradient .history-accordion__header .history-accordion__title,
+div.history-accordion__item--gradient button.history-accordion__header span.history-accordion__title {
+  color: #1B4332 !important;
+  -webkit-text-fill-color: #1B4332 !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  text-shadow: none !important;
+}
+
+.history-accordion .history-accordion__item--gradient .history-accordion__header .history-accordion__arrow,
+.history-accordion__item.history-accordion__item--gradient .history-accordion__header .history-accordion__arrow,
+div.history-accordion__item--gradient button.history-accordion__header span.history-accordion__arrow {
+  color: #1B4332 !important;
+  -webkit-text-fill-color: #1B4332 !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  text-shadow: none !important;
+}
+
+/* Контент внутри градиентных элементов - ТЕМНЫЙ ТЕКСТ */
+.history-accordion__item--gradient .history-accordion__content p {
+  color: #1B4332 !important;
+}
+
+.history-accordion__item--gradient .history-accordion__content * {
+  color: #1B4332 !important;
+}
+
+/* ДОКУМЕНТЫ И ВИКТОРИНА ОДИНАКОВОЙ ВЫСОТЫ */
+.history-accordion__item:nth-child(1).active,
+.history-accordion__item:nth-child(2).active {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+.history-accordion__item:nth-child(1).active .history-accordion__content,
+.history-accordion__item:nth-child(2).active .history-accordion__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: none;
+}
+
+#history-section-documents,
+#history-section-quiz {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#history-documents,
+#history-quiz {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

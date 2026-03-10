@@ -1,0 +1,494 @@
+/**
+ * Interactive Map Component Styles
+ * Стили для интерактивной карты исторических мест
+ */
+
+/* Контейнер карты */
+.history-map-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+  border: 2px solid #1B4332;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Кастомный маркер */
+.history-marker {
+  background: transparent;
+  border: none;
+}
+
+.history-marker__icon {
+  font-size: 30px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
+}
+
+.history-marker:hover .history-marker__icon {
+  transform: scale(1.2);
+}
+
+/* Popup стили */
+.history-popup-container {
+  font-family: Georgia, serif;
+}
+
+.history-popup {
+  padding: 0.5rem;
+  max-width: 280px;
+}
+
+.history-popup__title {
+  color: #1B4332;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 2px solid #DAA520;
+  padding-bottom: 0.25rem;
+}
+
+.history-popup__description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.history-popup__significance {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  background: #E8F5E9;
+  border-left: 3px solid #DAA520;
+  border-radius: 4px;
+}
+
+.history-popup__significance strong {
+  color: #1B4332;
+}
+
+/* Расширенный popup с табами */
+.history-popup-detailed {
+  padding: 1rem;
+  max-width: 400px;
+  min-width: 350px;
+}
+
+.history-popup-detailed__title {
+  color: #1B4332;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  border-bottom: 3px solid #DAA520;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Табы навигация */
+.history-popup-tabs__nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #E8F5E9;
+}
+
+.history-popup-tabs__btn {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.history-popup-tabs__btn:hover {
+  color: #1B4332;
+  background: #E8F5E9;
+}
+
+.history-popup-tabs__btn.active {
+  color: #1B4332;
+  border-bottom-color: #DAA520;
+  background: #E8F5E9;
+}
+
+/* Табы контент */
+.history-popup-tabs__content {
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-popup-tabs__panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.history-popup-tabs__panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Стили контента */
+.history-popup__text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.history-popup__category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #DAA520;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.history-popup__people {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #E8F5E9;
+  border-radius: 8px;
+}
+
+.history-popup__people strong {
+  color: #1B4332;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.history-popup__people ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-popup__people li {
+  padding: 0.25rem 0;
+  color: #333;
+}
+
+.history-popup__people li:before {
+  content: "👤 ";
+  margin-right: 0.5rem;
+}
+
+/* Список фактов */
+.history-popup__facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-popup__facts-list li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #E8F5E9;
+  border-left: 4px solid #DAA520;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Временная шкала */
+.history-popup__timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.history-popup__timeline:before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #DAA520;
+}
+
+.history-popup__timeline-item {
+  position: relative;
+  padding: 0.75rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.history-popup__timeline-item:before {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  top: 1rem;
+  width: 12px;
+  height: 12px;
+  background: #DAA520;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #DAA520;
+}
+
+.history-popup__timeline-year {
+  display: block;
+  font-weight: bold;
+  color: #1B4332;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.history-popup__timeline-event {
+  display: block;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Скроллбар для контента */
+.history-popup-tabs__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-popup-tabs__content::-webkit-scrollbar-track {
+  background: #E8F5E9;
+  border-radius: 3px;
+}
+
+.history-popup-tabs__content::-webkit-scrollbar-thumb {
+  background: #DAA520;
+  border-radius: 3px;
+}
+
+.history-popup-tabs__content::-webkit-scrollbar-thumb:hover {
+  background: #1B4332;
+}
+
+/* Tooltip стили - МАКСИМАЛЬНАЯ ВИДИМОСТЬ */
+.leaflet-tooltip.history-tooltip {
+  background: #1B4332 !important;
+  color: #FFFFFF !important;
+  border: 3px solid #FFD700 !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  font-family: Georgia, serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+  white-space: nowrap !important;
+  z-index: 10000 !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  transition: none !important; /* Убираем анимацию */
+  animation: none !important; /* Убираем анимацию */
+}
+
+/* Убедимся что текст внутри тоже светлый */
+.leaflet-tooltip.history-tooltip * {
+  color: #FFFFFF !important;
+}
+
+/* Дополнительные селекторы для всех возможных вариантов */
+.history-tooltip,
+.leaflet-tooltip-top.history-tooltip,
+.leaflet-tooltip-bottom.history-tooltip,
+.leaflet-tooltip-left.history-tooltip,
+.leaflet-tooltip-right.history-tooltip {
+  background-color: #1B4332 !important;
+  color: #FFFFFF !important;
+  border-color: #FFD700 !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Текст внутри тултипа */
+.history-tooltip::before,
+.history-tooltip::after,
+.leaflet-tooltip.history-tooltip::before,
+.leaflet-tooltip.history-tooltip::after {
+  color: #FFFFFF !important;
+}
+
+/* Мгновенное скрытие при закрытии */
+.leaflet-tooltip.leaflet-zoom-hide {
+  opacity: 0 !important;
+  transition: none !important;
+  display: none !important;
+}
+
+.leaflet-tooltip-top.history-tooltip::before {
+  border-top-color: #FFD700 !important;
+  border-width: 8px !important;
+}
+
+.leaflet-tooltip-bottom.history-tooltip::before {
+  border-bottom-color: #FFD700 !important;
+  border-width: 8px !important;
+}
+
+.leaflet-tooltip-left.history-tooltip::before {
+  border-left-color: #FFD700 !important;
+  border-width: 8px !important;
+}
+
+.leaflet-tooltip-right.history-tooltip::before {
+  border-right-color: #FFD700 !important;
+  border-width: 8px !important;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .history-map-container {
+    height: 400px;
+    margin: 1rem 0;
+  }
+
+  .history-popup {
+    max-width: 220px;
+  }
+
+  .history-popup__title {
+    font-size: 1rem;
+  }
+
+  .history-popup__description,
+  .history-popup__significance {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-map-container {
+    height: 300px;
+  }
+
+  .history-marker__icon {
+    font-size: 24px;
+  }
+}
+
+/* Leaflet controls customization */
+.history-map-container .leaflet-control-zoom a {
+  background: #E8F5E9;
+  color: #1B4332;
+  border: 1px solid #1B4332;
+}
+
+.history-map-container .leaflet-control-zoom a:hover {
+  background: #1B4332;
+  color: white;
+}
+
+/* Accessibility */
+.history-marker:focus {
+  outline: 2px solid #DAA520;
+  outline-offset: 2px;
+}
+
+/* Фикс для текста над картой */
+#history-section-map > p {
+  color: #1B4332 !important;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(232, 245, 233, 0.8);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Wrapper для карты с кнопкой */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Кнопка полноэкранного режима */
+.map-fullscreen-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  border: 2px solid #1B4332;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #1B4332;
+}
+
+/* Полноэкранный режим */
+.map-wrapper.fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  background: #f5f5f5 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.map-wrapper.fullscreen .history-map-container {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.map-wrapper.fullscreen .map-fullscreen-btn {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 100000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Иконка для выхода из полноэкранного режима */
+.map-fullscreen-btn.exit svg {
+  transform: rotate(180deg);
+}
+
+/* Анимация появления полноэкранного режима */
+@keyframes fullscreenFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.map-wrapper.fullscreen {
+  animation: fullscreenFadeIn 0.3s ease;
+}
+
+/* Скрыть скролл при полноэкранном режиме */
+body.map-fullscreen-active {
+  overflow: hidden;
+}

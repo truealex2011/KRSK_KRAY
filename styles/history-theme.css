@@ -1,0 +1,50 @@
+/**
+ * History Tab Theme - Historical Design System
+ * Vintage aesthetic with dark green, gold, and light green colors
+ */
+
+:root {
+  /* Primary Colors - Dark Green Theme */
+  --history-brown: #1B4332;
+  --history-gold: #DAA520;
+  --history-beige: #E8F5E9;
+  --history-dark-brown: #0F2419;
+  --history-light-gold: #F4E4C1;
+  
+  /* Semantic Colors */
+  --history-bg-primary: #E8F5E9;
+  --history-bg-secondary: #F1F8F4;
+  --history-text-primary: #0F2419;
+  --history-text-secondary: #1B4332;
+  --history-accent: #DAA520;
+  --history-border: #81C784;
+  
+  /* Shadows */
+  --history-shadow-sm: 0 2px 4px rgba(27, 67, 50, 0.1);
+  --history-shadow-md: 0 4px 8px rgba(27, 67, 50, 0.15);
+  --history-shadow-lg: 0 8px 16px rgba(27, 67, 50, 0.2);
+  
+  /* Transitions */
+  --history-transition-fast: 0.15s ease;
+  --history-transition-normal: 0.3s ease;
+  --history-transition-slow: 0.5s ease;
+  
+  /* Border Radius */
+  --history-radius-sm: 4px;
+  --history-radius-md: 8px;
+  --history-radius-lg: 12px;
+  
+  /* Spacing */
+  --history-spacing-sm: 0.5rem;
+  --history-spacing-md: 1rem;
+  --history-spacing-lg: 1.5rem;
+  --history-spacing-xl: 2rem;
+  
+  /* Typography */
+  --history-font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Utility Classes */
+.history-text-primary { color: var(--history-text-primary); }
+.history-text-secondary { color: var(--history-text-secondary); }
+.history-bg-primary { background-color: var(--history-bg-primary); }

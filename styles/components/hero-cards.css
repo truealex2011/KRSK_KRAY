@@ -1,0 +1,422 @@
+/**
+ * Hero Flip Cards Styles - Green Theme with Full Image
+ */
+
+.hero-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  height: auto;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 10rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-card:first-child {
+  margin-top: 4rem;
+}
+
+.hero-card:hover {
+  z-index: 10;
+}
+
+.hero-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card--flipped .hero-card__inner {
+  transform: rotateY(180deg);
+}
+
+.hero-card__front,
+.hero-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.2);
+  border: 3px solid #81C784;
+  transition: all 0.3s ease;
+  min-height: 300px;
+}
+
+/* Front side - Full image background */
+.hero-card__front {
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.hero-card--flipped .hero-card__front {
+  pointer-events: none;
+}
+
+.hero-card__bg-image {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  object-position: center;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  border: 3px solid #81C784;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.hero-card__bg-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F6 100%);
+  z-index: 1;
+}
+
+/* Text overlay on front */
+.hero-card__overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: opacity 0.3s ease;
+  width: 90%;
+  max-width: 300px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-card__front:hover {
+  box-shadow: 0 16px 40px rgba(45, 106, 79, 0.3);
+}
+
+/* Back side */
+.hero-card__back {
+  background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%);
+  color: white;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.3);
+  padding: 2.5rem;
+  pointer-events: auto !important;
+}
+
+.hero-card--flipped .hero-card__back {
+  pointer-events: auto !important;
+}
+
+.hero-card__name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  font-family: Georgia, serif;
+  letter-spacing: 0.5px;
+  color: #FFFFFF !important;
+}
+
+.hero-card__front .hero-card__name {
+  color: #1B4332;
+  opacity: 0.85;
+}
+
+.hero-card__back .hero-card__name {
+  color: #FFFFFF !important;
+  margin-bottom: 0.75rem;
+}
+
+.hero-card__title {
+  font-size: 1.15rem;
+  color: #2D6A4F;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.hero-card__front .hero-card__title {
+  color: #1B4332;
+}
+
+.hero-card__years {
+  font-size: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0.75rem 0 1.25rem 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero-card__bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 0 1.25rem 0;
+  color: #FFFFFF;
+}
+
+.hero-card__achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.hero-card__achievements li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  color: #FFFFFF;
+}
+
+.hero-card__achievements li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #81C784;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Flip Button */
+.hero-card__flip-btn {
+  padding: 0.5rem 0.7rem;
+  background: #81C784;
+  border: none;
+  color: #1B4332;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  pointer-events: auto !important;
+  z-index: 20 !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.hero-card__front .hero-card__flip-btn {
+  opacity: 0;
+}
+
+.hero-card:hover .hero-card__front .hero-card__flip-btn {
+  opacity: 1;
+}
+
+.hero-card__back .hero-card__flip-btn {
+  opacity: 1;
+}
+
+.hero-card__flip-btn:hover {
+  background: #A8D5BA;
+  transform: scale(1.15);
+}
+
+.hero-card__flip-btn:active {
+  transform: scale(0.9);
+}
+
+/* Tabs Styles */
+.hero-card__tabs-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto !important;
+  z-index: 50 !important;
+  position: relative;
+}
+
+.hero-card__tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto !important;
+  z-index: 50 !important;
+  position: relative;
+}
+
+.hero-card__tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+}
+
+.hero-card__tab-btn {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+  position: relative;
+}
+
+.hero-card__tab-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-card__tab-btn--active {
+  background: #81C784;
+  border-color: #81C784;
+  color: #1B4332;
+}
+
+.hero-card__tab-panels {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  pointer-events: auto !important;
+  z-index: 50 !important;
+}
+
+.hero-card__tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+  pointer-events: auto !important;
+}
+
+.hero-card__tab-panel--active {
+  display: block;
+  pointer-events: auto !important;
+}
+
+.hero-card__tab-panel p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #FFFFFF !important;
+  margin: 0;
+  text-align: left;
+}
+
+.hero-card__tab-panel {
+  color: #FFFFFF !important;
+}
+
+.hero-card__tab-panel * {
+  color: #FFFFFF !important;
+}
+
+.hero-card__back .hero-card__tab-panel,
+.hero-card__back .hero-card__tab-panel p,
+.hero-card__back .hero-card__tab-panel * {
+  color: #FFFFFF !important;
+}
+
+.hero-card__tabs-container {
+  color: #FFFFFF !important;
+}
+
+.hero-card__tabs-container * {
+  color: #FFFFFF !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
+.hero-card:hover .hero-card__front {
+  box-shadow: 0 16px 40px rgba(45, 106, 79, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .hero-card {
+    height: 360px;
+  }
+
+  .hero-card__back {
+    padding: 2rem;
+  }
+
+  .hero-card__name {
+    font-size: 1.4rem;
+  }
+
+  .hero-card__title {
+    font-size: 1rem;
+  }
+
+  .hero-card__years {
+    font-size: 0.95rem;
+  }
+
+  .hero-card__bio {
+    font-size: 0.9rem;
+  }
+
+  .hero-card__achievements li {
+    font-size: 0.85rem;
+  }
+}

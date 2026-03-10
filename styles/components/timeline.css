@@ -1,0 +1,441 @@
+/**
+ * Animated Timeline Styles - Proper Zigzag Design
+ */
+
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 96000px;
+  height: 100%;
+  flex: 1;
+  background: linear-gradient(180deg, #E8F5E9 0%, #F1F8F6 100%);
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+}
+
+/* Вертикальная линия времени - змейка */
+.timeline__line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 400px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.timeline__line svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.timeline__line svg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 20, 10;
+  opacity: 0.6;
+}
+
+.timeline__item {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 80px;
+  height: 80px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__item--animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Чередование левой и правой стороны */
+.timeline__item[data-side="right"] {
+  flex-direction: row;
+}
+
+.timeline__item[data-side="left"] {
+  flex-direction: row-reverse;
+}
+
+/* Интерактивный маркер */
+.timeline__marker {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%);
+  border: 5px solid #81C784;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 20px rgba(102, 187, 106, 0.3);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.timeline__marker::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #81C784;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline__marker::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+}
+
+.timeline__marker:hover {
+  transform: scale(1.15);
+  box-shadow: 0 16px 40px rgba(45, 106, 79, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 30px rgba(102, 187, 106, 0.5);
+}
+
+.timeline__year {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  font-family: Georgia, serif;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Карточка с информацией */
+.timeline__card {
+  background: linear-gradient(135deg, #F1F8F6 0%, #E8F5E9 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #81C784;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  overflow: auto;
+  max-height: 900px;
+  opacity: 0;
+  pointer-events: none;
+  width: 1000px;
+  height: 900px;
+  z-index: 10001;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Когда карточка в body и активна */
+body > .timeline__card {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Заголовок карточки */
+.timeline__card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #81C784;
+}
+
+.timeline__card-date {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2D6A4F;
+  min-width: 140px;
+  font-family: Georgia, serif;
+}
+
+.timeline__card-title {
+  font-size: 1.9rem;
+  color: #1B4332;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
+
+/* Контент с табами */
+.timeline__card-content {
+  display: flex;
+  gap: 2rem;
+  height: 700px;
+}
+
+/* Вертикальные табы слева */
+.timeline__card-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 180px;
+}
+
+.timeline__tab-btn {
+  padding: 1rem;
+  background: #E8F5E9;
+  border: 2px solid #81C784;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #2D6A4F;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.timeline__tab-btn:hover {
+  background: #C8E6C9;
+  border-color: #66BB6A;
+}
+
+.timeline__tab-btn--active {
+  background: #2D6A4F;
+  color: white;
+  border-color: #2D6A4F;
+  font-size: 1.12rem;
+}
+
+/* Панели с контентом */
+.timeline__card-panels {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 1.5rem;
+  padding-left: 0.6rem;
+}
+
+.timeline__tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.timeline__tab-panel--active {
+  display: block;
+}
+
+.timeline__tab-panel p {
+  color: #2D6A4F;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin: 0.9rem 0;
+  font-weight: 500;
+}
+
+.timeline__content-text {
+  padding: 0.6rem 0;
+}
+
+.timeline__content-text p {
+  color: #2D6A4F;
+  line-height: 1.8;
+  font-size: 1.15rem;
+  margin: 0.8rem 0;
+  font-weight: 500;
+}
+
+.timeline__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline__list li {
+  color: #2D6A4F;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline__list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #81C784;
+  font-weight: bold;
+}
+
+.timeline__dates {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeline__date-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: #E8F5E9;
+  border-left: 3px solid #81C784;
+  border-radius: 4px;
+}
+
+.timeline__date-year {
+  font-weight: bold;
+  color: #2D6A4F;
+  min-width: 60px;
+  font-family: Georgia, serif;
+}
+
+.timeline__date-event {
+  color: #2D6A4F;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Фон модального окна - используем body::before */
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.timeline__item[data-side="right"] .timeline__card {
+  left: auto;
+  right: auto;
+  margin-left: 0;
+}
+
+.timeline__item[data-side="left"] .timeline__card {
+  left: auto;
+  right: auto;
+  margin-right: 0;
+}
+
+.timeline__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F 0%, #66BB6A 50%, #81C784 100%);
+}
+
+/* Активная карточка */
+.timeline__item--active .timeline__card {
+  max-height: 900px;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.timeline__item--active .timeline__card::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+.timeline__card:hover {
+  box-shadow: 0 12px 28px rgba(45, 106, 79, 0.2);
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-color: #66BB6A;
+}
+
+.timeline__title {
+  color: #1B4332;
+  font-size: 1.2rem;
+  margin: 0 0 0.6rem 0;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.timeline__description {
+  color: #2D6A4F;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline {
+    max-width: 100%;
+    min-height: 9000px;
+    padding: 2rem 1rem;
+  }
+
+  .timeline__marker {
+    width: 70px;
+    height: 70px;
+  }
+
+  .timeline__year {
+    font-size: 0.7rem;
+  }
+
+  .timeline__card {
+    width: 180px;
+    padding: 0.8rem;
+  }
+
+  .timeline__title {
+    font-size: 0.85rem;
+  }
+
+  .timeline__description {
+    font-size: 0.75rem;
+  }
+
+  .timeline__item--active .timeline__card {
+    max-height: 180px;
+  }
+}

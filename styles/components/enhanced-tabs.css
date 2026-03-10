@@ -1,0 +1,1328 @@
+/* ============================================
+   Enhanced Tabs Components
+   Стили для переработанных табов "О Красноярском крае"
+   ============================================ */
+
+/* ============================================
+   1. INFO BADGES PANEL - УЛУЧШЕННАЯ ВЕРСИЯ
+   ============================================ */
+.info-badges-panel {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1a4d2e 0%, #2d5f3f 50%, #4f772d 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(26, 77, 46, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-badges-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.info-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.info-badge:hover {
+  box-shadow: 0 16px 48px rgba(27, 67, 50, 0.25);
+  border-color: rgba(255,255,255,0.6);
+}
+
+.info-badge__icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(27, 67, 50, 0.2));
+}
+
+.info-badge__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-badge__value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1a4d2e 0%, #4f772d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.info-badge__label {
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   2. SIDE TABS (Вертикальные табы)
+   ============================================ */
+.side-tabs-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.side-tabs-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.side-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.side-tab-btn:hover {
+  border-color: #4f772d;
+  background: #f8f9fa;
+}
+
+.side-tab-btn--active {
+  background: linear-gradient(135deg, #1a4d2e 0%, #4f772d 100%);
+  border-color: #1a4d2e;
+  color: white;
+}
+
+.side-tab-icon {
+  font-size: 1.5rem;
+}
+
+.side-tab-label {
+  font-weight: 600;
+}
+
+.side-tabs-content {
+  min-height: 400px;
+}
+
+.zone-content {
+  display: none;
+}
+
+.zone-content--active {
+  display: block;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   3. GEOGRAPHIC RECORDS
+   ============================================ */
+.geographic-records {
+  margin-top: 3rem;
+}
+
+.geo-record-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(27, 67, 50, 0.12);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.geo-record-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 77, 46, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.geo-record-card:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(26, 77, 46, 0.25);
+}
+
+.geo-record-card:hover::before {
+  opacity: 1;
+}
+
+.geo-record-card__image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.geo-record-card__image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(27, 67, 50, 0.6) 0%, transparent 100%);
+}
+
+.geo-record-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0.95);
+}
+
+.geo-record-card:hover .geo-record-card__image img {
+  transform: scale(1.15);
+  filter: brightness(1.05);
+}
+
+.geo-record-card__content {
+  padding: 1.5rem;
+}
+
+.geo-record-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1rem;
+}
+
+.geo-record-card__stats {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.geo-record-card__stats li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.geo-record-card__stats li:last-child {
+  border-bottom: none;
+}
+
+.geo-record-card__description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============================================
+   4. FLORA & FAUNA SHOWCASE
+   ============================================ */
+.flora-fauna-showcase {
+  margin-top: 3rem;
+}
+
+.fauna-category {
+  margin-bottom: 3rem;
+}
+
+.fauna-category__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  color: #1a4d2e;
+  margin-bottom: 1.5rem;
+}
+
+.fauna-category__icon {
+  font-size: 2rem;
+}
+
+.fauna-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.fauna-card:hover {
+  transform: translateY(-4px);
+}
+
+.fauna-card__image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.fauna-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fauna-card__icon {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #c8e6c9 0%, #a8dadc 100%);
+  transition: transform 0.3s ease;
+}
+
+.fauna-card:hover .fauna-card__icon {
+  transform: scale(1.1);
+}
+
+.fauna-card__info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.fauna-card__info h5 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.fauna-card__population {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.fauna-card__desc {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+.fauna-description {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(200, 230, 201, 0.3) 0%, rgba(168, 218, 220, 0.3) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #4f772d;
+}
+
+.fauna-description p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   5. RESERVES GALLERY
+   ============================================ */
+.reserves-gallery {
+  margin-top: 3rem;
+}
+
+.reserve-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(27, 67, 50, 0.15);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.reserve-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #1a4d2e, #4f772d, #90a955);
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.reserve-card:hover {
+  transform: translateY(-20px) rotate(-1deg);
+  box-shadow: 0 24px 72px rgba(26, 77, 46, 0.3);
+}
+
+.reserve-card:hover::before {
+  opacity: 1;
+}
+
+.reserve-card__header {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.reserve-card__header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(27, 67, 50, 0.7) 100%);
+}
+
+.reserve-card__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reserve-card:hover .reserve-card__header img {
+  transform: scale(1.2) rotate(2deg);
+}
+
+.reserve-card__badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, rgba(26, 77, 46, 0.95) 0%, rgba(79, 119, 45, 0.95) 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.3);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.reserve-card:hover .reserve-card__badge {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(27, 67, 50, 0.4);
+}
+
+.reserve-card__body {
+  padding: 1.5rem;
+}
+
+.reserve-card__title {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1rem;
+}
+
+.reserve-card__stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.reserve-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.reserve-stat__icon {
+  font-size: 1.25rem;
+}
+
+.reserve-stat__value {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.reserve-card__description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   6. NATURAL PHENOMENA CARDS
+   ============================================ */
+.natural-phenomena {
+  margin-top: 3rem;
+}
+
+.phenomenon-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.phenomenon-card:hover {
+  transform: translateY(-8px);
+}
+
+.phenomenon-card__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.phenomenon-card__title {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1rem;
+}
+
+.phenomenon-card__description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.phenomenon-card__facts {
+  list-style: none;
+  padding: 0;
+}
+
+.phenomenon-card__facts li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.phenomenon-card__facts li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4f772d;
+  font-weight: bold;
+}
+
+/* ============================================
+   7. EXTENDED TIMELINE (История)
+   ============================================ */
+.extended-timeline {
+  margin-top: 2rem;
+}
+
+.timeline-period {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border-left: 4px solid #1a4d2e;
+}
+
+.timeline-period__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timeline-period__title {
+  font-size: 2rem;
+  color: #1a4d2e;
+}
+
+.timeline-period__years {
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.timeline-period__events {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-event {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.5rem;
+}
+
+.timeline-event__marker {
+  width: 20px;
+  height: 20px;
+  background: #4f772d;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 0 2px #4f772d;
+  margin-top: 0.5rem;
+}
+
+.timeline-event__content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.1);
+}
+
+.timeline-event__title {
+  font-size: 1.25rem;
+  color: #1a4d2e;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-event__content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   8. PERSONALITIES GALLERY (История)
+   ============================================ */
+.personalities-gallery {
+  margin-top: 3rem;
+}
+
+.personality-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.personality-card:hover {
+  transform: translateY(-8px);
+}
+
+.personality-card__portrait {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.personality-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.personality-card:hover .personality-card__portrait img {
+  filter: grayscale(0%);
+}
+
+.personality-card__info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.personality-card__name {
+  font-size: 1.125rem;
+  color: #1a4d2e;
+  margin-bottom: 0.5rem;
+}
+
+.personality-card__years {
+  display: block;
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.personality-card__role {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ============================================
+   9. INDIGENOUS PEOPLES CARDS (Культура)
+   ============================================ */
+.indigenous-peoples {
+  margin-top: 2rem;
+}
+
+.indigenous-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.indigenous-card:hover {
+  transform: translateY(-8px);
+}
+
+.indigenous-card__header {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.indigenous-card__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.indigenous-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(26, 77, 46, 0.9), transparent);
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.indigenous-card__name {
+  font-size: 2rem;
+  color: white;
+}
+
+.indigenous-card__body {
+  padding: 1.5rem;
+}
+
+.indigenous-card__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.indigenous-stat {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.indigenous-stat__label {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.indigenous-stat__value {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a4d2e;
+}
+
+.indigenous-card__traditions h5 {
+  font-size: 1rem;
+  color: #1a4d2e;
+  margin-bottom: 0.75rem;
+}
+
+.indigenous-card__traditions ul {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.indigenous-card__traditions li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.indigenous-card__traditions li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4f772d;
+  font-weight: bold;
+}
+
+.indigenous-card__description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============================================
+   10. CRAFTS SHOWCASE (Культура)
+   ============================================ */
+.crafts-showcase {
+  margin-top: 3rem;
+}
+
+.craft-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.craft-card:hover {
+  transform: translateY(-8px);
+}
+
+.craft-card__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.craft-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.craft-card:hover .craft-card__image img {
+  transform: scale(1.1);
+}
+
+.craft-card__content {
+  padding: 1.5rem;
+}
+
+.craft-card__title {
+  font-size: 1.25rem;
+  color: #1a4d2e;
+  margin-bottom: 0.75rem;
+}
+
+.craft-card__description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============================================
+   11. INDUSTRIES DASHBOARD (Экономика)
+   ============================================ */
+.industries-dashboard {
+  margin-top: 2rem;
+}
+
+.industry-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.15);
+}
+
+.industry-card__icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1a4d2e 0%, #4f772d 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.industry-card__title {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1.5rem;
+}
+
+.industry-card__stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.industry-stat {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.industry-stat__value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f772d;
+  margin-bottom: 0.5rem;
+}
+
+.industry-stat__label {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.industry-card__description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============================================
+   12. ENERGY INFOGRAPHIC (Экономика)
+   ============================================ */
+.energy-infographic {
+  margin-top: 3rem;
+}
+
+.energy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.energy-plant-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+}
+
+.energy-plant-card__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.energy-plant-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.energy-plant-card__info {
+  padding: 1.5rem;
+}
+
+.energy-plant-card__name {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1rem;
+}
+
+.energy-plant-card__capacity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #4f772d 0%, #90a955 100%);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.capacity-icon {
+  font-size: 2rem;
+}
+
+.capacity-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.energy-plant-card__details p {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #666;
+}
+
+.energy-plant-card__details p:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   13. ОБЩИЕ УТИЛИТЫ
+   ============================================ */
+.section-subtitle {
+  font-size: 2rem;
+  color: #1a4d2e;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #4f772d;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #4f772d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.btn-link:hover {
+  color: #1a4d2e;
+  text-decoration: underline;
+}
+
+.grid--4-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================
+   14. АНИМАЦИИ
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   18. RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .side-tabs-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .side-tabs-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    position: static;
+    gap: 0.75rem;
+  }
+  
+  .side-tab-btn {
+    min-width: 150px;
+  }
+  
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+  
+  .energy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-event {
+    grid-template-columns: 30px 1fr;
+    gap: 1rem;
+  }
+  
+  .indigenous-card__stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .compact-section {
+    padding: 1.5rem;
+  }
+  
+  .compact-section__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .info-badges-panel {
+    flex-direction: column;
+  }
+  
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-period__title {
+    font-size: 1.5rem;
+  }
+  
+  .fauna-category__title {
+    font-size: 1.5rem;
+  }
+  
+  .industry-card__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .reserve-card__stats {
+    flex-direction: column;
+  }
+  
+  .compact-section {
+    padding: 1rem;
+  }
+  
+  .compact-section__title {
+    font-size: 1.25rem;
+    gap: 0.5rem;
+  }
+  
+  .compact-section__icon {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ============================================
+   16. КОМПАКТНЫЕ СЕКЦИИ
+   ============================================ */
+.compact-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  border-left: 5px solid #4f772d;
+  box-shadow: 0 4px 16px rgba(27, 67, 50, 0.08);
+  transition: all 0.3s ease;
+}
+
+.compact-section:hover {
+  box-shadow: 0 8px 24px rgba(26, 77, 46, 0.15);
+  transform: translateY(-2px);
+}
+
+.compact-section__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.75rem;
+  color: #1a4d2e;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.compact-section__icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(27, 67, 50, 0.1));
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ============================================
+   17. ИНТЕРАКТИВНЫЕ СЕКЦИИ-КАРТОЧКИ
+   ============================================ */
+.interactive-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.section-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26, 77, 46, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26, 77, 46, 0.25);
+  border-color: #4f772d;
+}
+
+.section-card__preview {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card__preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(79, 119, 45, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-card:hover .section-card__preview::before {
+  opacity: 1;
+}
+
+.section-card__icon {
+  font-size: 4rem;
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a4d2e 0%, #4f772d 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(26, 77, 46, 0.3);
+  transition: all 0.4s ease;
+}
+
+.section-card:hover .section-card__icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 32px rgba(26, 77, 46, 0.4);
+}
+
+.section-card__info {
+  flex: 1;
+}
+
+.section-card__title {
+  font-size: 1.75rem;
+  color: #1a4d2e;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.section-card__subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.section-card__arrow {
+  font-size: 1.5rem;
+  color: #4f772d;
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+.section-card.active .section-card__arrow {
+  transform: rotate(180deg);
+}
+
+.section-card__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.6s ease, opacity 0.6s ease;
+  padding: 0 2rem;
+  opacity: 0;
+}
+
+.section-card.active .section-card__content {
+  max-height: 5000px;
+  padding: 2rem;
+  opacity: 1;
+}
+
+/* Анимация появления контента */
+.section-card__content > * {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-card.active .section-card__content > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-card__preview {
+    padding: 1.5rem;
+  }
+  
+  .section-card__icon {
+    font-size: 3rem;
+    min-width: 60px;
+    height: 60px;
+  }
+  
+  .section-card__title {
+    font-size: 1.25rem;
+  }
+  
+  .section-card__subtitle {
+    font-size: 0.875rem;
+  }
+}

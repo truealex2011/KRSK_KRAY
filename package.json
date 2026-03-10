@@ -1,0 +1,37 @@
+{
+  "name": "krasnoyarsk-krai-website",
+  "version": "2.0.0",
+  "description": "Интерактивный образовательный веб-сайт о Красноярском крае - природа, история, экономика",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -o",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "krasnoyarsk",
+    "siberia",
+    "education",
+    "interactive",
+    "nature",
+    "history",
+    "economy",
+    "russia",
+    "web",
+    "spa"
+  ],
+  "author": {
+    "name": "Красноярский край - Проект",
+    "email": "TrueAlex2011@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/truealex2011/KRSK_KRAY.git"
+  },
+  "homepage": ".",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

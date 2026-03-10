@@ -1,0 +1,124 @@
+/**
+ * Force Dark Theme Override
+ * This file ensures the site always displays in dark theme
+ * regardless of user's system preferences
+ */
+
+/* FORCE DARK THEME GLOBALLY */
+:root {
+    /* Override with dark theme colors */
+    --cream: #1a1a1a !important;
+    --white-soft: #1B4332 !important;
+    --gray-warm: #1B4332 !important;
+    --forest-deep: #a0d4b8 !important;
+    --forest-main: #8bc9a3 !important;
+    --sage-dark: #74c69d !important;
+    --sage-main: #95d5b2 !important;
+}
+
+/* ===== TABS STYLING - LIGHT BACKGROUND WITH DARK TEXT ALWAYS ===== */
+.tabs__nav {
+    background: #D8F3DC !important;
+    padding: 1rem !important;
+    border-radius: 12px !important;
+}
+
+/* OVERRIDE ALL TAB BUTTON COLORS - MUST BE BLACK */
+.tabs__btn,
+.tabs__btn:link,
+.tabs__btn:visited,
+.tabs__btn:hover,
+.tabs__btn:focus,
+.tabs__btn:active,
+.tabs__btn--active,
+.tabs__btn[aria-selected="true"],
+button.tabs__btn,
+button.tabs__btn:link,
+button.tabs__btn:visited,
+button.tabs__btn:hover,
+button.tabs__btn:focus,
+button.tabs__btn:active {
+    color: #1B4332 !important;
+}
+
+.tabs__btn {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+.tabs__btn:hover {
+    background: rgba(27, 67, 50, 0.15) !important;
+    border-radius: 8px !important;
+}
+
+.tabs__btn--active {
+    background: rgba(27, 67, 50, 0.2) !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+}
+
+/* ===== IMAGES IN ABOUT SECTION - MUST BE VISIBLE ===== */
+.about__text-block img {
+    opacity: 1 !important;
+    filter: none !important;
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    border: 2px solid #999 !important;
+    z-index: 100 !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #1a1a1a !important;
+    color: #b0b0b0 !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: linear-gradient(135deg, #1a2e1a, #2d4a2d) !important;
+}
+
+.hero__title {
+    color: #a0d4b8 !important;
+}
+
+.hero__subtitle {
+    color: #74c69d !important;
+}
+
+.hero__description {
+    color: #b0b0b0 !important;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar-track {
+    background: #2d4a2d !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #95d5b2 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #74c69d !important;
+}
+
+html {
+    scrollbar-color: #95d5b2 #2d4a2d !important;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+    background: #74c69d !important;
+    color: #ffffff !important;
+}
+
+::-moz-selection {
+    background: #74c69d !important;
+    color: #ffffff !important;
+}

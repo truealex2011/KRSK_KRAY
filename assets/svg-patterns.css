@@ -1,0 +1,122 @@
+/* SVG Patterns for Krasnoyarsk Symbolism */
+
+/* Yenisei River Flow Pattern */
+.pattern-yenisei-flow {
+    background-image: url("data:image/svg+xml,%3Csvg width='400' height='200' viewBox='0 0 400 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='riverFlow' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%2374C69D;stop-opacity:0.8'/%3E%3Cstop offset='50%25' style='stop-color:%2352B788;stop-opacity:0.6'/%3E%3Cstop offset='100%25' style='stop-color:%2340916C;stop-opacity:0.4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,100 Q100,50 200,100 T400,100' stroke='url(%23riverFlow)' stroke-width='12' fill='none' opacity='0.7'/%3E%3Cpath d='M0,120 Q100,70 200,120 T400,120' stroke='url(%23riverFlow)' stroke-width='8' fill='none' opacity='0.5'/%3E%3Cpath d='M0,140 Q100,90 200,140 T400,140' stroke='url(%23riverFlow)' stroke-width='6' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+/* Taiga Forest Pattern */
+.pattern-taiga-forest {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='treeGradient' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2340916C;stop-opacity:0.6'/%3E%3Cstop offset='100%25' style='stop-color:%232D5A3D;stop-opacity:0.8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23treeGradient)'%3E%3Cpath d='M30,90 L35,70 L40,90 Z' opacity='0.7'/%3E%3Cpath d='M32,75 L35,60 L38,75 Z' opacity='0.8'/%3E%3Cpath d='M33,65 L35,50 L37,65 Z' opacity='0.9'/%3E%3Crect x='34' y='90' width='2' height='10' fill='%231B4332'/%3E%3C/g%3E%3Cg fill='url(%23treeGradient)' transform='translate(50,10)'%3E%3Cpath d='M30,90 L35,70 L40,90 Z' opacity='0.6'/%3E%3Cpath d='M32,75 L35,60 L38,75 Z' opacity='0.7'/%3E%3Cpath d='M33,65 L35,50 L37,65 Z' opacity='0.8'/%3E%3Crect x='34' y='90' width='2' height='10' fill='%231B4332'/%3E%3C/g%3E%3Cg fill='url(%23treeGradient)' transform='translate(-20,20)'%3E%3Cpath d='M30,90 L35,70 L40,90 Z' opacity='0.5'/%3E%3Cpath d='M32,75 L35,60 L38,75 Z' opacity='0.6'/%3E%3Cpath d='M33,65 L35,50 L37,65 Z' opacity='0.7'/%3E%3Crect x='34' y='90' width='2' height='10' fill='%231B4332'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 120px 120px;
+}
+
+/* Stolby Mountains Silhouette */
+.pattern-stolby-mountains {
+    background-image: url("data:image/svg+xml,%3Csvg width='600' height='200' viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='mountainGradient' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232D5A3D;stop-opacity:0.9'/%3E%3Cstop offset='100%25' style='stop-color:%231B4332;stop-opacity:0.7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,200 L50,120 L100,140 L150,80 L200,100 L250,60 L300,90 L350,70 L400,110 L450,85 L500,130 L550,105 L600,150 L600,200 Z' fill='url(%23mountainGradient)' opacity='0.6'/%3E%3Cpath d='M0,200 L80,160 L130,180 L180,140 L230,160 L280,120 L330,150 L380,130 L430,170 L480,145 L530,180 L580,165 L600,185 L600,200 Z' fill='url(%23mountainGradient)' opacity='0.4'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 600px 200px;
+}
+
+/* Organic Leaf Pattern */
+.pattern-organic-leaves {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='leafGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2395D5B2;stop-opacity:0.6'/%3E%3Cstop offset='100%25' style='stop-color:%2374C69D;stop-opacity:0.4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23leafGradient)'%3E%3Cpath d='M20,40 Q30,20 40,40 Q30,60 20,40 Z' opacity='0.7'/%3E%3Cpath d='M60,20 Q70,0 80,20 Q70,40 60,20 Z' opacity='0.5'/%3E%3Cpath d='M10,70 Q20,50 30,70 Q20,90 10,70 Z' opacity='0.6'/%3E%3Cpath d='M50,60 Q60,40 70,60 Q60,80 50,60 Z' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 80px 80px;
+}
+
+/* Snowflake Pattern (for winter theme) */
+.pattern-siberian-snow {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='snowGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23B7E4C7;stop-opacity:0.8'/%3E%3Cstop offset='100%25' style='stop-color:%23D8F3DC;stop-opacity:0.6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23snowGradient)' stroke-width='1' fill='none' opacity='0.5'%3E%3Cline x1='50' y1='20' x2='50' y2='80'/%3E%3Cline x1='20' y1='50' x2='80' y2='50'/%3E%3Cline x1='35' y1='35' x2='65' y2='65'/%3E%3Cline x1='65' y1='35' x2='35' y2='65'/%3E%3Ccircle cx='50' cy='50' r='3' fill='url(%23snowGradient)' opacity='0.7'/%3E%3C/g%3E%3Cg stroke='url(%23snowGradient)' stroke-width='1' fill='none' opacity='0.3' transform='translate(25,25) scale(0.5)'%3E%3Cline x1='50' y1='20' x2='50' y2='80'/%3E%3Cline x1='20' y1='50' x2='80' y2='50'/%3E%3Cline x1='35' y1='35' x2='65' y2='65'/%3E%3Cline x1='65' y1='35' x2='35' y2='65'/%3E%3Ccircle cx='50' cy='50' r='3' fill='url(%23snowGradient)' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+}
+
+/* River Ripples Pattern */
+.pattern-river-ripples {
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='100' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='rippleGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%2352B788;stop-opacity:0.3'/%3E%3Cstop offset='50%25' style='stop-color:%2374C69D;stop-opacity:0.5'/%3E%3Cstop offset='100%25' style='stop-color:%2395D5B2;stop-opacity:0.3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23rippleGradient)' stroke-width='2' fill='none'%3E%3Cellipse cx='50' cy='50' rx='20' ry='8' opacity='0.6'/%3E%3Cellipse cx='50' cy='50' rx='35' ry='12' opacity='0.4'/%3E%3Cellipse cx='50' cy='50' rx='50' ry='16' opacity='0.2'/%3E%3Cellipse cx='150' cy='30' rx='15' ry='6' opacity='0.5'/%3E%3Cellipse cx='150' cy='30' rx='25' ry='9' opacity='0.3'/%3E%3Cellipse cx='150' cy='30' rx='35' ry='12' opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 100px;
+}
+
+/* Pine Cone Pattern */
+.pattern-pine-cones {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='80' viewBox='0 0 60 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='coneGradient' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2340916C;stop-opacity:0.8'/%3E%3Cstop offset='100%25' style='stop-color:%232D5A3D;stop-opacity:0.6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23coneGradient)'%3E%3Cellipse cx='30' cy='20' rx='8' ry='12' opacity='0.7'/%3E%3Cellipse cx='30' cy='25' rx='9' ry='8' opacity='0.6'/%3E%3Cellipse cx='30' cy='30' rx='10' ry='6' opacity='0.5'/%3E%3Cellipse cx='30' cy='35' rx='9' ry='5' opacity='0.4'/%3E%3Cellipse cx='30' cy='40' rx='7' ry='4' opacity='0.3'/%3E%3C/g%3E%3Cg fill='url(%23coneGradient)' transform='translate(15,40) scale(0.7)'%3E%3Cellipse cx='30' cy='20' rx='8' ry='12' opacity='0.5'/%3E%3Cellipse cx='30' cy='25' rx='9' ry='8' opacity='0.4'/%3E%3Cellipse cx='30' cy='30' rx='10' ry='6' opacity='0.3'/%3E%3Cellipse cx='30' cy='35' rx='9' ry='5' opacity='0.2'/%3E%3Cellipse cx='30' cy='40' rx='7' ry='4' opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 60px 80px;
+}
+
+/* Decorative Border Patterns */
+.border-yenisei {
+    border-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q25,5 50,10 T100,10' stroke='%2352B788' stroke-width='3' fill='none'/%3E%3C/svg%3E") 1;
+}
+
+.border-forest {
+    border-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,20 L15,5 L20,20 M25,20 L30,8 L35,20' stroke='%2340916C' stroke-width='2' fill='none'/%3E%3C/svg%3E") 1;
+}
+
+/* Background Overlay Patterns */
+.overlay-nature {
+    position: relative;
+}
+
+.overlay-nature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='overlayGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2395D5B2;stop-opacity:0.1'/%3E%3Cstop offset='100%25' style='stop-color:%2374C69D;stop-opacity:0.05'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23overlayGradient)'%3E%3Cpath d='M50,50 Q75,25 100,50 Q75,75 50,50 Z' opacity='0.3'/%3E%3Cpath d='M150,100 Q175,75 200,100 Q175,125 150,100 Z' opacity='0.2'/%3E%3Cpath d='M25,150 Q50,125 75,150 Q50,175 25,150 Z' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.25;
+}
+
+.overlay-nature > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* Animated Patterns */
+@keyframes flowAnimation {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 400px;
+    }
+}
+
+.pattern-yenisei-flow.animated {
+    animation: flowAnimation 20s linear infinite;
+}
+
+@keyframes leafSway {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+.pattern-organic-leaves.animated {
+    animation: leafSway 4s ease-in-out infinite;
+}
+
+/* Pattern Utilities */
+.pattern-opacity-light { opacity: 0.3; }
+.pattern-opacity-medium { opacity: 0.5; }
+.pattern-opacity-strong { opacity: 0.7; }
+
+.pattern-size-sm { background-size: 50px 50px; }
+.pattern-size-md { background-size: 100px 100px; }
+.pattern-size-lg { background-size: 200px 200px; }
+.pattern-size-xl { background-size: 400px 400px; }

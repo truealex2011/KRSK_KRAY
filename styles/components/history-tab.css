@@ -1,0 +1,459 @@
+/* ============================================
+   HISTORY TAB STYLES
+   Стили для вкладки "История"
+   ============================================ */
+
+/* История - общие стили */
+.history-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.history-intro__text {
+    font-size: 1.1rem;
+    color: #5A6C7D;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+/* История - бейджи */
+.history-badges {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+}
+
+.history-badge .info-badge__icon {
+    font-size: 2rem;
+}
+
+/* История - секции */
+.history-section {
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   ИНТЕРАКТИВНАЯ ВРЕМЕННАЯ ЛИНИЯ
+   ============================================ */
+
+.history-timeline-interactive {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-period {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.history-period:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.history-period__header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.history-period__header:hover {
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+}
+
+.history-period__icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.history-period__info {
+    flex: 1;
+}
+
+.history-period__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.25rem 0;
+}
+
+.history-period__years {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.history-period__arrow {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+.history-period.active .history-period__arrow {
+    transform: rotate(180deg);
+}
+
+.history-period__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.history-period.active .history-period__content {
+    max-height: 2000px;
+}
+
+/* События внутри периода */
+.history-events {
+    padding: 1.5rem;
+    background: #F8F9FA;
+}
+
+.history-event {
+    padding: 1rem;
+    background: #FFFFFF;
+    border-left: 4px solid #8B4513;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.history-event:last-child {
+    margin-bottom: 0;
+}
+
+.history-event:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.history-event__year {
+    display: inline-block;
+    background: #8B4513;
+    color: #FFFFFF;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.history-event__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin: 0.5rem 0;
+}
+
+.history-event__text {
+    font-size: 0.95rem;
+    color: #5A6C7D;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   ИСТОРИЧЕСКИЕ ЛИЧНОСТИ (FLIP CARDS)
+   ============================================ */
+
+.history-persons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.history-person-flip {
+    height: 200px;
+}
+
+.history-person-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.history-person-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.history-person-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.5rem 0;
+}
+
+.history-person-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* ============================================
+   АККОРДЕОН КЛЮЧЕВЫХ СОБЫТИЙ
+   ============================================ */
+
+.history-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-accordion-item {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-accordion-header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.history-accordion-header:hover {
+    background: linear-gradient(135deg, #CD853F 0%, #D2691E 100%);
+}
+
+.history-accordion-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.history-accordion-title {
+    flex: 1;
+}
+
+.history-accordion-title h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.25rem 0;
+}
+
+.history-accordion-year {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.history-accordion-arrow {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+.history-accordion-item.active .history-accordion-arrow {
+    transform: rotate(180deg);
+}
+
+.history-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.history-accordion-item.active .history-accordion-content {
+    max-height: 1000px;
+}
+
+.history-accordion-text {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #2C3E50;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    background: #F8F9FA;
+}
+
+.history-accordion-list {
+    padding: 0 1.5rem 1.5rem 3rem;
+    margin: 0;
+    background: #F8F9FA;
+}
+
+.history-accordion-list li {
+    font-size: 0.95rem;
+    color: #5A6C7D;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+}
+
+.history-accordion-list li:last-child {
+    margin-bottom: 0;
+}
+
+.history-accordion-list strong {
+    color: #8B4513;
+    font-weight: 600;
+}
+
+/* ============================================
+   ИНТЕРЕСНЫЕ ФАКТЫ
+   ============================================ */
+
+.history-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.history-fact-card {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #8B4513;
+}
+
+.history-fact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.history-fact-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.history-fact-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin: 0 0 0.75rem 0;
+}
+
+.history-fact-text {
+    font-size: 0.95rem;
+    color: #5A6C7D;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 768px) {
+    .history-period__header {
+        padding: 1rem;
+    }
+
+    .history-period__icon {
+        font-size: 1.5rem;
+        margin-right: 0.75rem;
+    }
+
+    .history-period__title {
+        font-size: 1.1rem;
+    }
+
+    .history-period__years {
+        font-size: 0.8rem;
+    }
+
+    .history-events {
+        padding: 1rem;
+    }
+
+    .history-event {
+        padding: 0.75rem;
+    }
+
+    .history-event__title {
+        font-size: 1rem;
+    }
+
+    .history-event__text {
+        font-size: 0.9rem;
+    }
+
+    .history-persons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .history-person-flip {
+        height: 180px;
+    }
+
+    .history-person-icon {
+        font-size: 2.5rem;
+    }
+
+    .history-person-name {
+        font-size: 1rem;
+    }
+
+    .history-accordion-header {
+        padding: 1rem;
+    }
+
+    .history-accordion-icon {
+        font-size: 1.5rem;
+        margin-right: 0.75rem;
+    }
+
+    .history-accordion-title h4 {
+        font-size: 1rem;
+    }
+
+    .history-accordion-year {
+        font-size: 0.8rem;
+    }
+
+    .history-facts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .history-fact-card {
+        padding: 1rem;
+    }
+
+    .history-fact-icon {
+        font-size: 2rem;
+    }
+
+    .history-fact-title {
+        font-size: 1rem;
+    }
+}
+
+/* Анимации */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history-period.active .history-events,
+.history-accordion-item.active .history-accordion-content {
+    animation: slideDown 0.3s ease;
+}

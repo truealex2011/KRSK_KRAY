@@ -1,0 +1,180 @@
+/* Image Quality Enhancement - Retina & High DPI Support */
+
+/* Глобальные настройки для улучшения качества изображений */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Улучшение качества для всех изображений */
+img,
+picture,
+canvas,
+video {
+    /* Оптимальное качество для всех дисплеев */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: auto;
+    
+    /* Интерполяция для старых браузеров */
+    -ms-interpolation-mode: bicubic;
+    
+    /* Отключение размытия при трансформациях */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+    /* Аппаратное ускорение */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    
+    /* Сглаживание краев */
+    -webkit-font-smoothing: subpixel-antialiased;
+    
+    /* Максимальное качество */
+    image-rendering: high-quality;
+}
+
+/* Специальные настройки для модальных окон */
+.modal img,
+.modal__card-image img,
+.image-viewer__image {
+    /* Высокое качество рендеринга */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    
+    /* Четкость на Retina */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1);
+    -webkit-transform: translateZ(0) scale(1);
+    
+    /* Отключение размытия */
+    filter: none;
+    -webkit-filter: none;
+    
+    /* Максимальная четкость */
+    image-rendering: high-quality;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Для Retina дисплеев (2x, 3x) */
+@media 
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    
+    img,
+    picture,
+    .modal__card-image img,
+    .image-viewer__image {
+        /* Оптимизация для высокой плотности пикселей */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: auto;
+        -webkit-font-smoothing: subpixel-antialiased;
+        
+        /* Четкость без размытия */
+        transform: translateZ(0) scale(1.0001);
+        -webkit-transform: translateZ(0) scale(1.0001);
+    }
+}
+
+/* Для 3x дисплеев (iPhone Plus, Pro) */
+@media 
+  only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-resolution: 3dppx) {
+    
+    img,
+    .modal__card-image img,
+    .image-viewer__image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: auto;
+        transform: translateZ(0) scale(1.0001);
+    }
+}
+
+/* Отключение размытия при hover и трансформациях */
+img:hover,
+.modal__info-card:hover img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Для масштабируемых изображений */
+.modal__card-image img,
+.image-viewer__image {
+    /* Сохранение качества при масштабировании */
+    will-change: transform;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+/* Оптимизация для анимаций */
+@keyframes imageLoad {
+    from {
+        opacity: 0;
+        transform: translateZ(0) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0) scale(1);
+    }
+}
+
+img[loading="lazy"] {
+    animation: imageLoad 0.3s ease-out;
+}
+
+
+/* Специальные настройки для галереи видов */
+.species-gallery__image {
+    /* Максимальное качество рендеринга */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+    
+    /* Улучшение визуального качества */
+    filter: contrast(1.05) saturate(1.1) brightness(1.02);
+    -webkit-filter: contrast(1.05) saturate(1.1) brightness(1.02);
+    
+    /* Четкость на всех экранах */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0001);
+    -webkit-transform: translateZ(0) scale(1.0001);
+    
+    /* Плавная загрузка */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Улучшение при наведении */
+.species-gallery__image:hover {
+    filter: contrast(1.08) saturate(1.15) brightness(1.03);
+    transform: translateZ(0) scale(1.01);
+}
+
+/* Настройки для карточек животных в заповедниках */
+.species-mini-card img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Настройки для изображений заповедников */
+.reserve-modal__main-image,
+.reserve-modal__gallery-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+    filter: contrast(1.03) saturate(1.05);
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}

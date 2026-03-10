@@ -1,0 +1,119 @@
+/* Regional Icons for Krasnoyarsk */
+
+/* Icon Base Styles */
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.icon--sm { width: 16px; height: 16px; }
+.icon--md { width: 24px; height: 24px; }
+.icon--lg { width: 32px; height: 32px; }
+.icon--xl { width: 48px; height: 48px; }
+
+/* Yenisei River Icon */
+.icon-yenisei {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='riverIcon' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%2374C69D'/%3E%3Cstop offset='100%25' style='stop-color:%2352B788'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2,12 Q6,8 12,12 T22,12' stroke='url(%23riverIcon)' stroke-width='3' fill='none'/%3E%3Cpath d='M2,16 Q6,12 12,16 T22,16' stroke='url(%23riverIcon)' stroke-width='2' fill='none' opacity='0.7'/%3E%3Cpath d='M2,8 Q6,4 12,8 T22,8' stroke='url(%23riverIcon)' stroke-width='2' fill='none' opacity='0.7'/%3E%3C/svg%3E");
+}
+
+/* Taiga Forest Icon */
+.icon-taiga {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='forestIcon' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2340916C'/%3E%3Cstop offset='100%25' style='stop-color:%232D5A3D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23forestIcon)'%3E%3Cpath d='M6,20 L8,12 L10,20 Z'/%3E%3Cpath d='M7,15 L8,8 L9,15 Z'/%3E%3Cpath d='M7.5,12 L8,4 L8.5,12 Z'/%3E%3Crect x='7.8' y='20' width='0.4' height='2' fill='%231B4332'/%3E%3C/g%3E%3Cg fill='url(%23forestIcon)' transform='translate(6,0)'%3E%3Cpath d='M6,20 L8,12 L10,20 Z'/%3E%3Cpath d='M7,15 L8,8 L9,15 Z'/%3E%3Cpath d='M7.5,12 L8,4 L8.5,12 Z'/%3E%3Crect x='7.8' y='20' width='0.4' height='2' fill='%231B4332'/%3E%3C/g%3E%3Cg fill='url(%23forestIcon)' transform='translate(-6,2) scale(0.8)'%3E%3Cpath d='M6,20 L8,12 L10,20 Z'/%3E%3Cpath d='M7,15 L8,8 L9,15 Z'/%3E%3Cpath d='M7.5,12 L8,4 L8.5,12 Z'/%3E%3Crect x='7.8' y='20' width='0.4' height='2' fill='%231B4332'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Stolby Mountains Icon */
+.icon-stolby {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='mountainIcon' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232D5A3D'/%3E%3Cstop offset='100%25' style='stop-color:%231B4332'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2,20 L6,8 L10,12 L14,4 L18,10 L22,6 L22,20 Z' fill='url(%23mountainIcon)' opacity='0.8'/%3E%3Cpath d='M2,20 L8,16 L12,18 L16,14 L20,16 L22,18 L22,20 Z' fill='url(%23mountainIcon)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Pine Cone Icon */
+.icon-pine-cone {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='coneIcon' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2340916C'/%3E%3Cstop offset='100%25' style='stop-color:%232D5A3D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23coneIcon)'%3E%3Cellipse cx='12' cy='8' rx='3' ry='4'/%3E%3Cellipse cx='12' cy='11' rx='3.5' ry='3'/%3E%3Cellipse cx='12' cy='14' rx='4' ry='2.5'/%3E%3Cellipse cx='12' cy='17' rx='3.5' ry='2'/%3E%3Cellipse cx='12' cy='19' rx='2.5' ry='1.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Wildlife Icon (Bear) */
+.icon-bear {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bearIcon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232D5A3D'/%3E%3Cstop offset='100%25' style='stop-color:%231B4332'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23bearIcon)'%3E%3Ccircle cx='8' cy='6' r='2'/%3E%3Ccircle cx='16' cy='6' r='2'/%3E%3Cellipse cx='12' cy='10' rx='6' ry='4'/%3E%3Cellipse cx='12' cy='16' rx='5' ry='6'/%3E%3Ccircle cx='10' cy='9' r='0.5' fill='%23000'/%3E%3Ccircle cx='14' cy='9' r='0.5' fill='%23000'/%3E%3Cellipse cx='12' cy='11' rx='1' ry='0.5' fill='%23000'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Snowflake Icon */
+.icon-snowflake {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='snowIcon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23B7E4C7'/%3E%3Cstop offset='100%25' style='stop-color:%2395D5B2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23snowIcon)' stroke-width='1.5' fill='none'%3E%3Cline x1='12' y1='2' x2='12' y2='22'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cline x1='5.64' y1='5.64' x2='18.36' y2='18.36'/%3E%3Cline x1='18.36' y1='5.64' x2='5.64' y2='18.36'/%3E%3Cline x1='12' y1='6' x2='10' y2='4'/%3E%3Cline x1='12' y1='6' x2='14' y2='4'/%3E%3Cline x1='12' y1='18' x2='10' y2='20'/%3E%3Cline x1='12' y1='18' x2='14' y2='20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Fish Icon (for Yenisei) */
+.icon-fish {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='fishIcon' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%2374C69D'/%3E%3Cstop offset='100%25' style='stop-color:%2352B788'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2,12 Q6,8 12,12 Q18,16 22,12 L20,10 L22,12 L20,14 Z M12,12 Q14,10 16,12 Q14,14 12,12 Z' fill='url(%23fishIcon)'/%3E%3Ccircle cx='8' cy='11' r='1' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* Tourism/Hiking Icon */
+.icon-hiking {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hikingIcon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2340916C'/%3E%3Cstop offset='100%25' style='stop-color:%2352B788'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23hikingIcon)'%3E%3Ccircle cx='12' cy='4' r='2'/%3E%3Cpath d='M10,7 L14,7 L13,12 L15,12 L16,20 L14,20 L13,15 L11,15 L10,20 L8,20 L9,12 L10,7 Z'/%3E%3Cline x1='6' y1='22' x2='18' y2='10' stroke='url(%23hikingIcon)' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Leaf Icon */
+.icon-leaf {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='leafIcon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2395D5B2'/%3E%3Cstop offset='100%25' style='stop-color:%2374C69D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12,2 Q20,6 20,14 Q20,20 12,22 Q12,16 12,10 Q12,6 12,2 Z' fill='url(%23leafIcon)'/%3E%3Cpath d='M12,2 Q12,6 12,10 Q12,16 12,22' stroke='%2340916C' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Sun Icon (for nature/weather) */
+.icon-sun {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='sunIcon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23D4AF37'/%3E%3Cstop offset='100%25' style='stop-color:%2395D5B2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='12' cy='12' r='5' fill='url(%23sunIcon)'/%3E%3Cg stroke='url(%23sunIcon)' stroke-width='2'%3E%3Cline x1='12' y1='1' x2='12' y2='3'/%3E%3Cline x1='12' y1='21' x2='12' y2='23'/%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'/%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'/%3E%3Cline x1='1' y1='12' x2='3' y2='12'/%3E%3Cline x1='21' y1='12' x2='23' y2='12'/%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'/%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Navigation Icons */
+.icon-menu {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2340916C' stroke-width='2'%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.icon-close {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2340916C' stroke-width='2'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.icon-arrow-right {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2352B788' stroke-width='2' fill='none'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12,5 19,12 12,19'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.icon-arrow-left {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2352B788' stroke-width='2' fill='none'%3E%3Cline x1='19' y1='12' x2='5' y2='12'/%3E%3Cpolyline points='12,19 5,12 12,5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Social Media Icons */
+.icon-vk {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.785,16.241c0.473,0,0.751-0.324,0.751-0.324s0.225-0.253,0.218-0.729c-0.007-0.458,0.207-0.525,0.207-0.525c0.204-0.043,0.459,0.441,0.733,0.637c0.21,0.149,0.369,0.117,0.369,0.117l0.749-0.012c0,0,0.392-0.025,0.206-0.332c-0.015-0.025-0.109-0.229-0.561-0.648c-0.473-0.438-0.41-0.367,0.16-1.126c0.348-0.463,0.487-0.745,0.444-0.867c-0.041-0.115-0.291-0.085-0.291-0.085l-0.844,0.005c0,0-0.062-0.009-0.108,0.019c-0.045,0.027-0.074,0.09-0.074,0.09s-0.133,0.354-0.31,0.656c-0.374,0.636-0.523,0.669-0.584,0.629c-0.142-0.093-0.107-0.374-0.107-0.573c0-0.623,0.094-0.883-0.183-0.95c-0.092-0.022-0.16-0.037-0.396-0.04c-0.303-0.003-0.559,0.001-0.704,0.072c-0.096,0.047-0.171,0.152-0.125,0.158c0.056,0.008,0.184,0.034,0.251,0.126c0.087,0.119,0.084,0.386,0.084,0.386s0.05,0.733-0.117,0.823c-0.114,0.062-0.271-0.065-0.608-0.648c-0.172-0.297-0.302-0.625-0.302-0.625s-0.025-0.061-0.07-0.094c-0.054-0.04-0.13-0.053-0.13-0.053l-0.802,0.005c0,0-0.121,0.003-0.165,0.056c-0.039,0.047-0.003,0.144-0.003,0.144s0.625,1.462,1.333,2.198C11.712,15.908,12.785,16.241,12.785,16.241z' fill='%2340916C'/%3E%3C/svg%3E");
+}
+
+.icon-telegram {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.944,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,11.944,0ZM18.632,7.974,16.9,16.019c-.129.579-.469.722-.951.45l-2.627-1.937-1.267,1.218c-.14.14-.259.259-.532.259l.19-2.69L15.208,9.672c.24-.214-.054-.333-.373-.119L9.267,12.9,6.7,12.058c-.573-.18-.584-.573.12-.848l11.13-4.29C18.48,6.68,18.927,7.08,18.632,7.974Z' fill='%2352B788'/%3E%3C/svg%3E");
+}
+
+.icon-instagram {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12,2.163c3.204,0,3.584.012,4.85.07,3.252.148,4.771,1.691,4.919,4.919.058,1.265.069,1.645.069,4.849s-.012,3.584-.069,4.849c-.149,3.225-1.664,4.771-4.919,4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.013-3.583.07-4.849C2.281,3.924,3.796,2.28,7.051,2.132,8.317,2.074,8.697,2.163,12,2.163ZM12,0C8.741,0,8.333.014,7.053.072,2.695.272.273,2.69.073,7.052.014,8.333,0,8.741,0,12s.014,3.668.072,4.948c.2,4.358,2.618,6.78,6.98,6.98C8.333,23.986,8.741,24,12,24s3.668-.014,4.948-.072c4.354-.2,6.782-2.618,6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947C23.728,2.695,21.31.273,16.948.073,15.668.014,15.259,0,12,0Zm0,5.838A6.162,6.162,0,1,0,18.162,12,6.162,6.162,0,0,0,12,5.838ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.406,4.155a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.406,4.155Z' fill='%2374C69D'/%3E%3C/svg%3E");
+}
+
+/* Icon Color Variations */
+.icon--primary { filter: hue-rotate(0deg); }
+.icon--secondary { filter: hue-rotate(30deg) saturate(0.8); }
+.icon--muted { filter: grayscale(0.5) opacity(0.7); }
+.icon--light { filter: brightness(1.3) saturate(0.8); }
+.icon--dark { filter: brightness(0.7) saturate(1.2); }
+
+/* Icon States */
+.icon:hover { transform: scale(1.1); transition: transform 0.2s ease; }
+.icon--spin { animation: spin 2s linear infinite; }
+.icon--pulse { animation: pulse 2s infinite; }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

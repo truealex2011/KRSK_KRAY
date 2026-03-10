@@ -1,0 +1,67 @@
+/**
+ * Facts Counter Styles
+ */
+
+.facts-counter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fact-item {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 100%);
+  border-radius: 12px;
+  border: 3px solid var(--history-primary, #8B4513);
+  transition: all 0.3s ease;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.25);
+}
+
+.fact-item__icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.fact-item__value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--history-accent, #DAA520);
+  font-family: Georgia, serif;
+  margin-bottom: 0.5rem;
+}
+
+.fact-item__label {
+  font-size: 1.1rem;
+  color: var(--history-primary, #8B4513);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .facts-counter {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .fact-item {
+    padding: 1.5rem;
+  }
+
+  .fact-item__value {
+    font-size: 2.5rem;
+  }
+
+  .fact-item__label {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,29 @@
+/**
+ * History Color Overrides
+ * Глобальные переопределения для замены коричневого на темно-зеленый
+ */
+
+/* Переопределение всех коричневых цветов на темно-зеленые */
+:root {
+  --history-primary: #1B4332 !important;
+  --history-primary-dark: #0F2419 !important;
+  --history-primary-light: #2C5F2D !important;
+  --history-brown: #1B4332 !important;
+  --history-dark-brown: #0F2419 !important;
+  
+  --history-background-light: #E8F5E9 !important;
+  --history-background-medium: #C8E6C9 !important;
+  --history-background-dark: #A5D6A7 !important;
+  --history-beige: #E8F5E9 !important;
+  
+  --history-bg-primary: #E8F5E9 !important;
+  --history-bg-secondary: #F1F8F4 !important;
+  --history-text-primary: #0F2419 !important;
+  --history-text-secondary: #1B4332 !important;
+  --history-border: #81C784 !important;
+  
+  --history-shadow-sm: 0 2px 4px rgba(27, 67, 50, 0.1) !important;
+  --history-shadow-md: 0 4px 8px rgba(27, 67, 50, 0.15) !important;
+  --history-shadow-lg: 0 8px 16px rgba(27, 67, 50, 0.2) !important;
+  --history-shadow-medium: 0 4px 12px rgba(27, 67, 50, 0.2) !important;
+}

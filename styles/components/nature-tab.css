@@ -1,0 +1,1987 @@
+/* ============================================
+   NATURE TAB COMPONENTS
+   Компоненты для вкладки "Природа"
+   ============================================ */
+
+/* Nature Tab Container Background */
+.tabs__panel[data-panel="nature"] {
+    background: var(--forest-main);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+}
+
+/* ============================================
+   1. INFO BADGES (Интерактивные бейджи)
+   ============================================ */
+
+.info-badges-panel {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl) var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    transition: padding-bottom 0.3s ease-out;
+    flex-wrap: wrap;
+}
+
+.info-badges-panel.has-active-dropdown {
+    padding-bottom: 350px;
+}
+
+.info-badge {
+    background: var(--sage-pale);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md) var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    min-width: 140px;
+    flex: 1;
+    max-width: 220px;
+}
+
+.info-badge:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--sage-main);
+}
+
+.info-badge__icon {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+}
+
+.info-badge__content {
+    text-align: center;
+}
+
+.info-badge__value {
+    display: block;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--forest-deep);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+}
+
+.info-badge__label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--forest-main);
+    line-height: 1.2;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Выпадающая панель под бейджем */
+.info-badge__dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-md));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest-main) 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 8px 32px rgba(27, 67, 50, 0.4);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    border: 3px solid var(--sage-main);
+    z-index: 100;
+}
+
+.info-badge--active .info-badge__dropdown {
+    max-height: 800px;
+    opacity: 1;
+    padding: var(--space-xl);
+    overflow-y: auto;
+}
+
+.info-badge__dropdown-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--white-soft);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.info-badge__dropdown-text {
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-style: italic;
+}
+
+.info-badge__dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+}
+
+.info-badge__dropdown-list li {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.9);
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-lg);
+    position: relative;
+    line-height: var(--leading-relaxed);
+    transition: all 0.2s ease;
+}
+
+.info-badge__dropdown-list li:hover {
+    color: var(--white-soft);
+    padding-left: calc(var(--space-lg) + 4px);
+}
+
+.info-badge__dropdown-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--sage-main);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.info-badge__dropdown-list li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-badge__dropdown-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--forest-deep);
+    margin-bottom: var(--space-sm);
+}
+
+.info-badge__dropdown-text {
+    font-size: var(--text-sm);
+    color: var(--forest-main);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-sm);
+}
+
+.info-badge__dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-badge__dropdown-list li {
+    font-size: var(--text-sm);
+    color: var(--forest-main);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.info-badge__dropdown-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--sage-main);
+    font-weight: bold;
+}
+
+/* ============================================
+   COMPACT SECTIONS (Collapsible sections)
+   ============================================ */
+
+.compact-section {
+    margin-bottom: var(--space-lg);
+    border: 2px solid var(--forest-main);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white-soft);
+}
+
+/* Все секции по умолчанию скрыты */
+.compact-section {
+    /* Добавляем класс collapsed по умолчанию через HTML */
+}
+
+/* Start sections collapsed by default */
+.compact-section--collapsed {
+    /* This class will be added by default via JS */
+}
+
+.compact-section__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    margin: 0;
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--white-soft);
+    cursor: pointer;
+    user-select: none;
+    background: var(--forest-main);
+    transition: background var(--transition-fast);
+    position: relative;
+}
+
+.compact-section__title:hover {
+    background: var(--forest-deep);
+    color: var(--white-soft);
+}
+
+.compact-section__title::after {
+    content: '▼';
+    position: absolute;
+    right: var(--space-lg);
+    transition: transform var(--transition-fast);
+    font-size: 0.8em;
+    color: var(--white-soft);
+}
+
+.compact-section--collapsed .compact-section__title::after {
+    transform: rotate(-90deg);
+}
+
+.compact-section__icon {
+    font-size: 1.5rem;
+}
+
+.compact-section__content {
+    padding: var(--space-lg);
+    max-height: 3000px;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out, padding 0.15s ease-out;
+    background: var(--sage-pale);
+}
+
+.compact-section--collapsed .compact-section__content {
+    max-height: 0;
+    padding: 0 var(--space-lg);
+}
+
+/* ============================================
+   2. GEO RECORDS (Географические рекорды с flip)
+   ============================================ */
+
+.geo-records-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.geo-record-flip {
+    perspective: 1000px;
+    height: 180px;
+}
+
+.geo-record-flip__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.geo-record-flip:hover .geo-record-flip__inner {
+    transform: rotateY(180deg);
+}
+
+.geo-record-flip__front,
+.geo-record-flip__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.geo-record-flip__front {
+    background: #1B4332;
+    border: 2px solid var(--sage-main);
+    position: relative;
+    overflow: hidden;
+}
+
+.geo-record-flip__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.geo-record-flip__title,
+.geo-record-flip__subtitle {
+    position: relative;
+    z-index: 1;
+}
+
+.geo-record-flip__back {
+    background: #1B4332 !important;
+    color: #95D5B2 !important;
+    transform: rotateY(180deg);
+    padding: var(--space-lg);
+    overflow-y: auto;
+}
+
+.geo-record-flip__icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.geo-record-flip__title {
+    font-size: 1.2rem;
+    font-weight: var(--font-semibold);
+    color: #FFFFFF;
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.geo-record-flip__subtitle {
+    font-size: 1rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.geo-record-flip__back-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.geo-record-flip__back-content p {
+    margin: var(--space-sm) 0;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   3. FLORA & FAUNA (Табы и карточки)
+   ============================================ */
+
+.flora-fauna-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.flora-fauna-section {
+    background: var(--white-soft);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.flora-fauna-section__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--sage-pale);
+}
+
+.flora-fauna-section__icon {
+    font-size: 1.5rem;
+}
+
+.flora-fauna-section__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--forest-deep);
+    margin: 0;
+}
+
+/* Внутренние табы */
+.flora-fauna-tabs {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--sage-pale);
+}
+
+.flora-fauna-tab {
+    background: transparent;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--forest-main);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.flora-fauna-tab:hover {
+    color: var(--sage-dark);
+}
+
+.flora-fauna-tab--active {
+    color: var(--sage-dark);
+    border-bottom-color: var(--sage-dark);
+    font-weight: var(--font-semibold);
+}
+
+/* Карточки видов */
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.species-card {
+    background: var(--sage-pale);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.species-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--sage-main);
+}
+
+.species-card__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.species-card__name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--forest-deep);
+    margin-bottom: var(--space-xs);
+}
+
+.species-card__info {
+    font-size: var(--text-xs);
+    color: var(--forest-main);
+}
+
+/* ============================================
+   4. SPECIES GALLERY (Галерея видов) - НОВЫЙ ДИЗАЙН
+   ============================================ */
+
+.species-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a1f1a 0%, #1a4d2e 100%);
+    z-index: 20000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.species-gallery--active {
+    display: flex;
+    opacity: 1;
+}
+
+.species-gallery__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* ЛЕВАЯ ЧАСТЬ - КАРТИНКА (62.5% или 75% когда табы скрыты) */
+.species-gallery__image-section {
+    width: 62.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem;
+    transition: width 0.4s ease;
+    order: 1;
+}
+
+.species-gallery__image-section--expanded {
+    width: 75%;
+}
+
+.species-gallery__image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.species-gallery__image {
+    width: 100%;
+    height: 100%;
+    max-height: 95vh;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    
+    /* Улучшение качества изображений */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+    
+    /* Сглаживание и резкость */
+    filter: contrast(1.05) saturate(1.1) sharpen(0.5);
+    -webkit-filter: contrast(1.05) saturate(1.1);
+    
+    /* Оптимизация рендеринга */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    
+    /* Плавная загрузка */
+    transition: filter 0.3s ease;
+}
+
+/* ЦЕНТРАЛЬНАЯ ЧАСТЬ - ИНФОРМАЦИЯ (25%) */
+.species-gallery__info-section {
+    width: 25%;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2rem;
+    overflow-y: auto;
+    position: relative;
+    border-left: 3px solid #52b788;
+    border-right: 3px solid #52b788;
+    transition: width 0.4s ease;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.species-gallery__info-section--expanded {
+    width: 25%;
+}
+
+/* ПРАВАЯ ЧАСТЬ - ВЕРТИКАЛЬНЫЕ ТАБЫ (12.5%) */
+.species-gallery__tabs-section {
+    width: 12.5%;
+    background: rgba(26, 77, 46, 0.95);
+    overflow-y: auto;
+    overflow-x: visible;
+    transition: width 0.4s ease;
+    position: relative;
+    z-index: 10;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.species-gallery__tabs-section--hidden {
+    width: 0;
+    overflow: visible;
+}
+
+.species-gallery__tabs-section--hidden .species-gallery__tabs-list {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.species-gallery__tabs-toggle {
+    position: fixed;
+    top: 50%;
+    right: 12.5%;
+    transform: translate(50%, -50%);
+    width: 40px;
+    height: 80px;
+    background: #52b788;
+    border: none;
+    border-radius: 12px 0 0 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 20;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.species-gallery__tabs-section--hidden .species-gallery__tabs-toggle {
+    right: 0;
+    border-radius: 0 12px 12px 0;
+    transform: translate(0, -50%) rotate(180deg);
+}
+
+.species-gallery__tabs-toggle:hover {
+    background: #40916c;
+    width: 45px;
+}
+
+/* Кнопка закрытия - В ПРАВОМ ВЕРХНЕМ УГЛУ ВСЕГО ОКНА */
+.species-gallery__close {
+    position: fixed !important;
+    top: 95px !important;
+    right: 20px !important;
+    background: #1a4d2e !important;
+    border: 3px solid #ffffff !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+    z-index: 99999 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.species-gallery__close:hover {
+    background: #2d6a4f !important;
+    transform: rotate(90deg) scale(1.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Заголовок */
+.species-gallery__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a4d2e;
+    margin-bottom: 1.5rem;
+    padding-right: 3rem;
+    line-height: 1.2;
+}
+
+.species-gallery__latin {
+    display: none; /* Скрыто по умолчанию */
+}
+
+/* Контент таба */
+.species-gallery__tab-content-container {
+    flex: 0 1 auto;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.species-gallery__tab-content {
+    display: none;
+}
+
+.species-gallery__tab-content--active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.species-gallery__tab-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a4d2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #52b788;
+}
+
+.species-gallery__tab-text {
+    font-size: 1rem;
+    color: #2d6a4f;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.species-gallery__tab-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.species-gallery__tab-list li {
+    padding: 0.7rem 0;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: #2d6a4f;
+    position: relative;
+    line-height: 1.6;
+    border-bottom: 1px solid #d8f3dc;
+}
+
+.species-gallery__tab-list li:last-child {
+    border-bottom: none;
+}
+
+.species-gallery__tab-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #52b788;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.species-gallery__tab-list strong {
+    color: #1a4d2e;
+    font-weight: 600;
+}
+
+/* Скроллбары */
+.species-gallery__tabs-section::-webkit-scrollbar,
+.species-gallery__info-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.species-gallery__tabs-section::-webkit-scrollbar-track,
+.species-gallery__info-section::-webkit-scrollbar-track {
+    background: rgba(216, 243, 220, 0.3);
+}
+
+.species-gallery__tabs-section::-webkit-scrollbar-thumb,
+.species-gallery__info-section::-webkit-scrollbar-thumb {
+    background: #52b788;
+    border-radius: 4px;
+}
+
+.species-gallery__tabs-section::-webkit-scrollbar-thumb:hover,
+.species-gallery__info-section::-webkit-scrollbar-thumb:hover {
+    background: #40916c;
+}
+
+/* ============================================
+   5. RESERVES CAROUSEL (Карусель заповедников)
+   ============================================ */
+
+.reserves-carousel {
+    position: relative;
+    margin-bottom: var(--space-xl);
+}
+
+.reserves-carousel__wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sage-main) var(--sage-pale);
+    padding-bottom: var(--space-md);
+    cursor: grab;
+    user-select: none;
+}
+
+.reserves-carousel__wrapper:active,
+.reserves-carousel__wrapper.active-drag {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+/* Разрешить клики на карточках заповедников */
+.reserve-card-compact {
+    pointer-events: auto !important;
+}
+
+.reserves-carousel__wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reserves-carousel__wrapper::-webkit-scrollbar-track {
+    background: var(--sage-pale);
+    border-radius: var(--radius-full);
+}
+
+.reserves-carousel__wrapper::-webkit-scrollbar-thumb {
+    background: var(--sage-main);
+    border-radius: var(--radius-full);
+}
+
+.reserves-carousel__track {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-sm);
+}
+
+.reserve-card-compact {
+    flex: 0 0 280px;
+    background: var(--white-soft);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+}
+
+.reserve-card-compact:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.reserve-card-compact__image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: var(--gradient-primary);
+    flex-shrink: 0;
+}
+
+.reserve-card-compact__content {
+    padding: var(--space-lg);
+    background: #2D6A4F;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.reserve-card-compact__content * {
+    color: #B8E6D5 !important;
+}
+
+.reserve-card-compact__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-sm);
+    gap: var(--space-xs);
+    min-height: 2.5rem;
+}
+
+.reserve-card-compact__title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: #B8E6D5 !important;
+    margin: 0;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.reserve-card-compact__year {
+    font-size: var(--text-sm);
+    color: #B8E6D5 !important;
+    font-weight: var(--font-semibold);
+    background: #1B4332;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.reserve-card-compact__area {
+    font-size: var(--text-sm);
+    color: #B8E6D5 !important;
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-semibold);
+}
+
+.reserve-card-compact__description {
+    font-size: var(--text-sm);
+    color: #B8E6D5 !important;
+    line-height: var(--leading-relaxed);
+    margin-top: auto;
+}
+
+/* ============================================
+   6. RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .info-badges-panel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .geo-records-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .flora-fauna-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-badges-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .geo-records-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .species-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .species-gallery__container {
+        flex-direction: column;
+    }
+    
+    .species-gallery__info-section {
+        width: 100%;
+        max-height: 40vh;
+    }
+    
+    .species-gallery__nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .species-gallery__nav--prev {
+        left: var(--space-md);
+    }
+    
+    .species-gallery__nav--next {
+        right: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .info-badges-panel {
+        grid-template-columns: 1fr;
+    }
+    
+    .geo-records-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .species-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .flora-fauna-tabs {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN ДЛЯ ГАЛЕРЕИ
+   ============================================ */
+
+@media (max-width: 1400px) {
+    .species-gallery__tabs-section {
+        width: 15%;
+    }
+    
+    .species-gallery__image-section {
+        width: 60%;
+    }
+    
+    .species-gallery__image-section--expanded {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .species-gallery__container {
+        flex-direction: column;
+    }
+    
+    .species-gallery__tabs-section {
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-bottom: 3px solid #52b788;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .species-gallery__tabs-section--hidden {
+        height: 0;
+        border-bottom: none;
+    }
+    
+    .species-gallery__tabs-list {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        height: 100%;
+    }
+    
+    .species-gallery__tab-item {
+        padding: 1rem 1.5rem;
+        border-left: none;
+        border-bottom: 4px solid transparent;
+        white-space: nowrap;
+    }
+    
+    .species-gallery__tab-item--active {
+        border-left: none;
+        border-bottom-color: #52b788;
+    }
+    
+    .species-gallery__tabs-toggle {
+        top: auto;
+        bottom: -20px;
+        right: 50%;
+        transform: translateX(50%) rotate(90deg);
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .species-gallery__image-section {
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .species-gallery__image-section--expanded {
+        width: 100%;
+        height: 60vh;
+    }
+    
+    .species-gallery__info-section {
+        width: 100%;
+        height: auto;
+        max-height: 40vh;
+        border-left: none;
+        border-top: 3px solid #52b788;
+    }
+}
+
+@media (max-width: 768px) {
+    .species-gallery__title {
+        font-size: 1.5rem;
+    }
+    
+    .species-gallery__tab-title {
+        font-size: 1.1rem;
+    }
+    
+    .species-gallery__tab-text {
+        font-size: 0.9rem;
+    }
+    
+    .species-gallery__tab-list li {
+        font-size: 0.85rem;
+    }
+    
+    .species-gallery__close {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .species-gallery__tabs-section {
+        height: 50px;
+    }
+    
+    .species-gallery__tab-item {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .species-gallery__image-section {
+        height: 40vh;
+        padding: 1rem;
+    }
+    
+    .species-gallery__info-section {
+        padding: 1rem;
+        max-height: 50vh;
+    }
+    
+    .species-gallery__title {
+        font-size: 1.3rem;
+        padding-right: 2.5rem;
+    }
+    
+    .species-gallery__latin {
+        font-size: 0.85rem;
+    }
+}
+
+
+.species-gallery__tabs-list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    flex: 0 1 auto;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.species-gallery__tab-item {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    color: #d8f3dc;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-right: 4px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.species-gallery__tab-item:hover {
+    background: rgba(82, 183, 136, 0.2);
+    border-right-color: #95d5b2;
+}
+
+.species-gallery__tab-item--active {
+    background: rgba(82, 183, 136, 0.4);
+    border-right-color: #52b788;
+    color: white;
+}
+
+
+/* ============================================
+   RESERVE MODAL (Модальное окно заповедников)
+   ============================================ */
+
+.reserve-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserve-modal--active {
+    display: flex;
+}
+
+.reserve-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+.reserve-modal__container {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    max-height: 92vh;
+    background: linear-gradient(135deg, #0a1f1a 0%, #1B4332 50%, #2D6A4F 100%);
+    border-radius: 24px;
+    overflow-y: auto;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(149, 213, 178, 0.2);
+    animation: modalSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid rgba(149, 213, 178, 0.3);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.reserve-modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reserve-modal__close:hover {
+    background: linear-gradient(135deg, rgba(255, 82, 82, 0.9) 0%, rgba(255, 50, 50, 0.8) 100%);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 82, 82, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.reserve-modal__header {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+    border-bottom: 2px solid rgba(149, 213, 178, 0.2);
+}
+
+.reserve-modal__title {
+    font-size: 4rem;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.reserve-modal__meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.reserve-modal__year,
+.reserve-modal__area,
+.reserve-modal__unesco {
+    background: linear-gradient(135deg, rgba(149, 213, 178, 0.25) 0%, rgba(82, 183, 136, 0.2) 100%);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid rgba(149, 213, 178, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.reserve-modal__year:hover,
+.reserve-modal__area:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border-color: rgba(149, 213, 178, 0.5);
+}
+
+.reserve-modal__unesco {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1B4332;
+    font-weight: 700;
+    border-color: rgba(255, 215, 0, 0.5);
+    animation: unescoGlow 2s ease-in-out infinite;
+}
+
+@keyframes unescoGlow {
+    0%, 100% { box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6); }
+}
+
+.reserve-modal__image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(149, 213, 178, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.reserve-modal__image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.reserve-modal__image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(149, 213, 178, 0.5);
+}
+
+.reserve-modal__main-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.reserve-modal__image-container:hover .reserve-modal__main-image {
+    transform: scale(1.05);
+}
+
+.reserve-modal__tabs {
+    display: flex;
+    gap: 5px;
+    padding: 0 50px;
+    border-bottom: 3px solid rgba(149, 213, 178, 0.2);
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.reserve-modal__tab {
+    background: transparent;
+    border: none;
+    padding: 18px 30px;
+    color: rgba(216, 243, 220, 0.6);
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-bottom: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    position: relative;
+    font-weight: 500;
+}
+
+.reserve-modal__tab::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(90deg, transparent, rgba(149, 213, 178, 0.3), transparent);
+    transition: height 0.3s ease;
+}
+
+.reserve-modal__tab:hover {
+    color: #FFFFFF;
+    background: rgba(149, 213, 178, 0.1);
+    transform: translateY(-2px);
+}
+
+.reserve-modal__tab:hover::before {
+    height: 100%;
+}
+
+.reserve-modal__tab--active {
+    color: #FFFFFF;
+    border-bottom-color: #95D5B2;
+    font-weight: 700;
+    background: linear-gradient(180deg, rgba(149, 213, 178, 0.15) 0%, transparent 100%);
+    box-shadow: inset 0 -4px 0 0 #95D5B2;
+}
+
+.reserve-modal__tab-icon {
+    font-size: 1.2rem;
+}
+
+.reserve-modal__content {
+    padding: 50px;
+    color: #D8F3DC;
+    min-height: 350px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.reserve-modal__gallery {
+    padding: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.reserve-modal__gallery-title {
+    color: #D8F3DC;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.reserve-modal__gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.reserve-modal__gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.reserve-modal__gallery-image:hover {
+    transform: scale(1.05);
+}
+
+
+/* Reserve Content Styles */
+.reserve-overview,
+.reserve-nature,
+.reserve-attractions,
+.reserve-access {
+    color: #D8F3DC;
+}
+
+.reserve-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: rgba(216, 243, 220, 0.95);
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 12px;
+    border-left: 4px solid #52b788;
+    transition: all 0.3s ease;
+}
+
+.reserve-text:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-left-color: #95D5B2;
+    transform: translateX(5px);
+}
+
+.reserve-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.reserve-stat {
+    background: linear-gradient(135deg, rgba(82, 183, 136, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(149, 213, 178, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.reserve-stat:hover {
+    background: linear-gradient(135deg, rgba(82, 183, 136, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(149, 213, 178, 0.4);
+}
+
+.reserve-stat__icon {
+    font-size: 2rem;
+}
+
+.reserve-stat__label {
+    font-size: 0.85rem;
+    color: rgba(216, 243, 220, 0.7);
+    margin-bottom: 5px;
+}
+
+.reserve-stat__value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #95D5B2;
+}
+
+.reserve-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.reserve-features li {
+    padding: 15px 20px;
+    padding-left: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.05rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.reserve-features li:hover {
+    background: rgba(82, 183, 136, 0.15);
+    border-bottom-color: rgba(149, 213, 178, 0.3);
+    padding-left: 55px;
+    transform: translateX(5px);
+}
+
+.reserve-features li::before {
+    content: '✦';
+    position: absolute;
+    left: 20px;
+    color: #52b788;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.reserve-features li:hover::before {
+    color: #95D5B2;
+    transform: scale(1.2) rotate(90deg);
+}
+
+.reserve-features li:last-child {
+    border-bottom: none;
+}
+
+.reserve-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.reserve-list li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.reserve-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #95D5B2;
+    font-size: 1.2rem;
+}
+
+.reserve-contacts {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.reserve-contacts p {
+    margin: 10px 0;
+    font-size: 1.05rem;
+}
+
+.reserve-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* Species Mini Grid (для видов в заповеднике) */
+.species-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.species-mini-card {
+    background: linear-gradient(135deg, rgba(82, 183, 136, 0.15) 0%, rgba(149, 213, 178, 0.1) 100%);
+    padding: 20px 15px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(82, 183, 136, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.species-mini-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.species-mini-card:hover {
+    background: linear-gradient(135deg, rgba(82, 183, 136, 0.25) 0%, rgba(149, 213, 178, 0.2) 100%);
+    transform: translateY(-8px) scale(1.05);
+    border-color: rgba(82, 183, 136, 0.5);
+    box-shadow: 0 10px 30px rgba(82, 183, 136, 0.3);
+}
+
+.species-mini-card:hover::before {
+    opacity: 1;
+}
+
+.species-mini-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.species-mini-card:hover img {
+    transform: scale(1.1);
+}
+
+.species-mini-card span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #D8F3DC;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+}
+
+/* Route Cards */
+.reserve-routes {
+    margin: 20px 0;
+}
+
+.reserve-routes h4 {
+    color: #95D5B2;
+    margin-bottom: 15px;
+}
+
+.route-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.route-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #D8F3DC;
+    margin-bottom: 5px;
+}
+
+.route-info {
+    font-size: 0.95rem;
+    color: rgba(216, 243, 220, 0.7);
+}
+
+/* Image Lightbox */
+.image-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-lightbox__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.image-lightbox__image {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reserve-modal__header {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .reserve-modal__title {
+        font-size: 2.2rem;
+    }
+    
+    .reserve-modal__content {
+        padding: 20px;
+    }
+    
+    .reserve-modal__tabs {
+        padding: 0 20px;
+    }
+    
+    .reserve-modal__tab {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .reserve-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .reserve-map {
+        height: 300px;
+    }
+}
+
+
+/* ============================================
+   IMPROVED GALLERY & LIGHTBOX
+   ============================================ */
+
+/* Gallery Item with Loader */
+.reserve-modal__gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reserve-modal__gallery-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 67, 50, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(149, 213, 178, 0.3);
+    border-top-color: #95D5B2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty Gallery State */
+.reserve-modal__gallery-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(216, 243, 220, 0.6);
+    font-size: 1.2rem;
+}
+
+/* Improved Lightbox with Navigation */
+.image-lightbox__counter {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.image-lightbox__prev,
+.image-lightbox__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-lightbox__prev {
+    left: 30px;
+}
+
+.image-lightbox__next {
+    right: 30px;
+}
+
+.image-lightbox__prev:hover:not(:disabled),
+.image-lightbox__next:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.image-lightbox__prev:disabled,
+.image-lightbox__next:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Loading Animation for Modal */
+.reserve-modal__container.loading {
+    pointer-events: none;
+}
+
+.reserve-modal__container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(149, 213, 178, 0.3);
+    border-top-color: #95D5B2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 100;
+}
+
+/* Smooth Transitions */
+.reserve-modal__gallery-image {
+    transition: opacity 0.3s ease;
+}
+
+.reserve-modal__gallery-image[src=""] {
+    opacity: 0;
+}
+
+/* Mobile Improvements */
+@media (max-width: 768px) {
+    .image-lightbox__prev,
+    .image-lightbox__next {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    
+    .image-lightbox__prev {
+        left: 10px;
+    }
+    
+    .image-lightbox__next {
+        right: 10px;
+    }
+    
+    .image-lightbox__counter {
+        top: 10px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .reserve-modal__gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* Accessibility */
+.reserve-modal__tab:focus,
+.image-lightbox__prev:focus,
+.image-lightbox__next:focus,
+.image-lightbox__close:focus {
+    outline: 3px solid #95D5B2;
+    outline-offset: 2px;
+}
+
+/* Smooth Scroll */
+.reserve-modal__container {
+    scroll-behavior: smooth;
+}
+
+/* Better Text Readability */
+.reserve-text strong {
+    color: #95D5B2;
+    font-weight: 600;
+}
+
+.reserve-list li strong {
+    color: #95D5B2;
+}
+
+/* Hover Effects for Interactive Elements */
+.reserve-modal__tab,
+.species-mini-card,
+.reserve-modal__gallery-image {
+    user-select: none;
+}
+
+/* Print Styles */
+@media print {
+    .reserve-modal__close,
+    .reserve-modal__tabs,
+    .image-lightbox {
+        display: none !important;
+    }
+    
+    .reserve-modal__container {
+        max-height: none;
+        overflow: visible;
+    }
+}

@@ -1,0 +1,55 @@
+/* Color Utilities */
+
+/* Text Colors */
+.text-forest-deep { color: var(--forest-deep); }
+.text-forest-main { color: var(--forest-main); }
+.text-sage-dark { color: var(--sage-dark); }
+.text-sage-main { color: var(--sage-main); }
+.text-sage-light { color: var(--sage-light); }
+.text-mint-soft { color: var(--mint-soft); }
+.text-mint-light { color: var(--mint-light); }
+.text-sage-pale { color: var(--sage-pale); }
+.text-cream { color: var(--cream); }
+.text-white-soft { color: var(--white-soft); }
+.text-gray-warm { color: var(--gray-warm); }
+.text-accent-gold { color: var(--accent-gold); }
+
+/* Background Colors */
+.bg-forest-deep { background-color: var(--forest-deep); }
+.bg-forest-main { background-color: var(--forest-main); }
+.bg-sage-dark { background-color: var(--sage-dark); }
+.bg-sage-main { background-color: var(--sage-main); }
+.bg-sage-light { background-color: var(--sage-light); }
+.bg-mint-soft { background-color: var(--mint-soft); }
+.bg-mint-light { background-color: var(--mint-light); }
+.bg-sage-pale { background-color: var(--sage-pale); }
+.bg-cream { background-color: var(--cream); }
+.bg-white-soft { background-color: var(--white-soft); }
+.bg-gray-warm { background-color: var(--gray-warm); }
+.bg-accent-gold { background-color: var(--accent-gold); }
+
+/* Gradient Backgrounds */
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-hero { background: var(--gradient-hero); }
+.bg-gradient-forest { background: var(--gradient-forest); }
+
+/* Border Colors */
+.border-forest-deep { border-color: var(--forest-deep); }
+.border-forest-main { border-color: var(--forest-main); }
+.border-sage-dark { border-color: var(--sage-dark); }
+.border-sage-main { border-color: var(--sage-main); }
+.border-sage-light { border-color: var(--sage-light); }
+.border-mint-soft { border-color: var(--mint-soft); }
+.border-mint-light { border-color: var(--mint-light); }
+.border-sage-pale { border-color: var(--sage-pale); }
+.border-cream { border-color: var(--cream); }
+.border-white-soft { border-color: var(--white-soft); }
+.border-gray-warm { border-color: var(--gray-warm); }
+.border-accent-gold { border-color: var(--accent-gold); }
+
+/* Opacity utilities */
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
